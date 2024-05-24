@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { listData } from "../../assets/data/HomeData";
 import CustomButton from "../../components/common/CustomButton";
 
 const HomeScreen = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="min-h-screen bg-[#f2f1ec] w-full flex flex-col lg:flex-row justify-between">
@@ -46,6 +48,7 @@ const HomeScreen = () => {
             variant="secondary"
             size="large"
             className="w-1/2 lg:w-60 mt-8 md:w-1/3  lg:mt-10 bg-[#F6D218] font-bold text-black hover:bg-[#d8c045]"
+            onClick={() => navigate("/create-account")}
           >
             Create Account
           </CustomButton>
@@ -54,6 +57,7 @@ const HomeScreen = () => {
           <CustomButton
             variant="outlined"
             size="large"
+            onClick={() => navigate("/login")}
             className="flex justify-center items-center h-12 w-32 md:fixed md:bottom-4 lg:bottom-auto lg:top-5 right-4 lg:right-12 z-20"
           >
             Login

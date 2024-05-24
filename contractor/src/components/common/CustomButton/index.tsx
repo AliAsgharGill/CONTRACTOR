@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 
-interface CustomButtonProps {
+interface oldButtonProps {
   variant?: "primary" | "secondary" | "success" | "danger" | "outlined";
   size?: "small" | "medium" | "large";
   className?: string;
@@ -23,7 +23,7 @@ const SIZES: Record<string, string> = {
   large: "px-8 py-4 text-lg",
 };
 
-const CustomButton: FC<CustomButtonProps> = ({
+const oldButton: FC<oldButtonProps> = ({
   variant = "primary",
   size = "medium",
   className = "",
@@ -48,4 +48,4 @@ const CustomButton: FC<CustomButtonProps> = ({
   );
 };
 
-export default CustomButton;
+export default oldButton;
