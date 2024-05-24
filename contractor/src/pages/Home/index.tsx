@@ -5,10 +5,10 @@ const HomeScreen = () => {
   return (
     <>
       <div className="min-h-screen bg-[#f2f1ec] w-full flex flex-col lg:flex-row justify-between">
-        <div className="lg:mt-[61px] lg:ml-[201px] flex flex-col items-center lg:items-start">
+        <div className="lg:mt-[61px] lg:ml-[201px] sm:mt-5 flex flex-col items-center lg:items-start">
           <img
             src="src/assets/images/image.png"
-            className=" w-100 md:w-70 lg:w-80"
+            className=" p-2 w-100 md:w-70 lg:w-80"
             alt="logo"
           />
           <div className="w-full lg:w-[535px] mt-8 lg:mt-14 text-center lg:text-left">
@@ -18,14 +18,14 @@ const HomeScreen = () => {
             </h1>
           </div>
           {/* LIST */}
-          <div className="flex-col items-center justify-center w-full lg:w-auto">
+          <div className="flex-col items-center justify-center p-4 sm:p-14 md:py-10 lg:p-0 lg:py-10 w-full lg:w-auto">
             {listData.map((item) => (
               <div
                 key={item.id}
-                className=" sm:flex w-full md:justify- md:space-y-5 lg:w-[535px] md:gap-4 lg:gap-0 space-x-4 items-center"
+                className=" sm:flex w-full md:justify-around  md:space-y-5 lg:w-[535px] md:gap-4 lg:gap-0 space-x-4 items-center"
               >
-                <div className="flex-shrink-0 flex flex-col justify-center text-center m-3 sm:m-5 sm:ml-20">
-                  <div className="w-1/2 px-6 h-10 rounded-full flex justify-center items-center bg-[#1B8179]">
+                <div className="flex-shrink-0 flex flex-col justify-center text-center m-3 sm:m-5">
+                  <div className="w-2 px-6 h-10 rounded-full flex justify-center items-center bg-[#1B8179]">
                     <h1 className="text-white font-bold text-xl lg:text-2xl">
                       {item.id}
                     </h1>
