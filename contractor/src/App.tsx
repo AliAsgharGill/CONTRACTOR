@@ -8,7 +8,8 @@ import {
 import Layout from "./Router/Layout/Layout";
 import Main from "./pages/Main/Main";
 import CreateAccount from "./pages/CreateAccount";
-import Login from "./pages/Login";
+import Login from "./pages/LoginScreen";
+import PageNotFound from "./pages/PageNotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route index path="/" element={<Main />} />
       <Route index path="/create-account" element={<CreateAccount />} />
       <Route index path="/login" element={<Login />} />
+      <Route index path="*" element={<PageNotFound />} />
     </Route>
   )
 );

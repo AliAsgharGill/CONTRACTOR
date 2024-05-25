@@ -250,6 +250,7 @@ export const formFields = [
     type: "password",
     placeholder: "Enter password",
   },
+  { name: "phone", label: "Phone", type: "tel", placeholder: "Enter phone" },
   {
     name: "confirmPassword",
     label: "Confirm Password",

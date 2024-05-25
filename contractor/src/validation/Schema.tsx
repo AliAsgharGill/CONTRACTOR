@@ -10,7 +10,7 @@ export const validationSchema = Yup.object().shape({
   phone: Yup.string().required("Phone is required"),
   stateprovince: Yup.string().required("State/Province is required"),
   positioninthecompany: Yup.string().required("Position is required"),
-  country: Yup.string().required("Country is required"),
+  country: Yup.string().required("Choose Country"),
   password: Yup.string().required("Password is required"),
   confirmpassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords must match")

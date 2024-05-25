@@ -1,15 +1,13 @@
 import React from "react";
-import classNames from "classnames";
+import { Typography } from "antd";
 
-interface CustomLabelProps {
+type CustomLabelProps = {
   text: string;
   className?: string;
-}
+};
 
 const CustomLabel: React.FC<CustomLabelProps> = ({ text, className }) => {
-  return (
-    <label className={`text-gray-700 font-medium ${className}`}>{text}</label>
-  );
+  return <Typography.Text className={className}>{text}</Typography.Text>;
 };
 
 export default CustomLabel;
