@@ -17,6 +17,6 @@ export const validationSchema = Yup.object().shape({
     .required("Confirm Password is required"),
   accountingemail: Yup.string()
     .email("Invalid email")
-    .required("Accounting email is required"),
+    .required("Accounting email is required"),    
   terms: Yup.bool().oneOf([true], "You must accept the terms and conditions"),
 });

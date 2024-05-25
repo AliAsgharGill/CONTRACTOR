@@ -1,12 +1,14 @@
-import React from "react";
-import { Checkbox } from "antd";
+import React, { useState } from "react";
+import { Checkbox, Alert } from "antd";
+import { CheckboxChangeEvent } from "antd/lib/checkbox";
 
 type CustomCheckboxProps = {
   checked: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (checked: boolean) => void;
   label: string;
   className?: string;
   name?: string;
+  errorMessage?: string;
 };
 
 const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
@@ -15,11 +17,22 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
   label,
   className,
   name,
+  errorMessage,
 }) => {
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleChange = (e: CheckboxChangeEvent) => {
+    setIsChecked(e.target.checked);
+    onChange(e.target.checked);
+  };
+
   return (
-    <Checkbox checked={checked} onChange={onChange} className={className} name={name}>
-      {label}
-    </Checkbox>
+    <>
+      <Checkbox checked={isChecked} onChange={handleChange} className={className} name={name}>
+        {label}
+      </Checkbox>
+      {errorMessage && <Alert type="error" message={errorMessage} />}
+    </>
   );
 };
 

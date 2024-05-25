@@ -262,5 +262,5 @@ export const formFields = [
     label: "Accounting email",
     type: "email",
     placeholder: "Enter accounting email",
-  },
+  }
 ];
