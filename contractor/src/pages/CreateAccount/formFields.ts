@@ -240,7 +240,7 @@ export const formFields = [
   {
     name: "country",
     label: "Country",
-    type: "dropdown",
+    type: "select",
     options: countries,
     placeholder: "Select country",
   },
@@ -250,7 +250,12 @@ export const formFields = [
     type: "password",
     placeholder: "Enter password",
   },
-  { name: "phone", label: "Phone", type: "tel", placeholder: "Enter phone" },
+  {
+    name: "companyPhone",
+    label: "Phone",
+    type: "tel",
+    placeholder: "Enter phone",
+  },
   {
     name: "confirmPassword",
     label: "Confirm Password",
@@ -262,5 +267,10 @@ export const formFields = [
     label: "Accounting email",
     type: "email",
     placeholder: "Enter accounting email",
-  }
+  },
+  {
+    name: "termAndConditions",
+    label: "Term and Conditions",
+    type: "checkbox",
+  },
 ];

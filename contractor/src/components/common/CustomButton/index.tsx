@@ -3,7 +3,7 @@ import { Button } from "antd";
 
 type CustomButtonProps = {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   type?: "primary" | "default" | "dashed" | "text" | "link";
   className?: string;
   disabled?: boolean;
