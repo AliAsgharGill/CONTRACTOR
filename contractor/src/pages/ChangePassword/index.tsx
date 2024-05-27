@@ -1,42 +1,17 @@
-import React from "react";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Form, Input, message } from "antd";
-import CustomLabel from "../../components/common/CustomLabel";
-import { Link, useNavigate } from "react-router-dom";
+import { Button, Form, Input } from "antd";
 import axios from "axios";
 
 type FieldType = {
-  email?: string;
   password?: string;
-  remember?: string;
+  confirmPassword?: string;
 };
 
-interface User {
-  companyName: string;
-  address: string;
-  companyPostalCode: string;
-  city: string;
-  email: string;
-  zipPostalCode: string;
-  phone: string;
-  stateProvince: string;
-  position: string;
-  country: string;
-  password: string;
-  companyPhone: string;
-  confirmPassword: string;
-  accountingEmail: string;
-  termAndConditions: string;
-}
 const ChangePassword = () => {
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     const response = await axios.get("http://localhost:3000/users");
-
-    const userExist = response.data.find(
-      (user: User) =>
-        user.email === values.email && user.password === values.password
-    );
-    // console.log("Success:", values);
+    response.data;
+    console.log("Success:", values);
   };
 
   const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
@@ -47,7 +22,7 @@ const ChangePassword = () => {
 
   return (
     <>
-      <div className="w-full flex justify-center items-center ">
+      <div className=" min-h-screen w-full flex justify-center items-center  bg-[#f2f1ec] ">
         <Form
           name="basic"
           labelCol={{ span: 8 }}
@@ -75,19 +50,9 @@ const ChangePassword = () => {
               alt="miniLogo"
               className="w-12"
             />
-            <h1 className="text-2xl font-bold">Change Password</h1>
+            <h1 className="text-4xl font-bold">Change Password</h1>
           </div>
-          <label htmlFor="password" className="mt-10 text-xl">
-            Username
-          </label>
-          <Form.Item<FieldType>
-            // label="Username"
-            name="email"
-            rules={[{ required: true, message: "Please input your username!" }]}
-          >
-            <Input className="w-96 h-12 text-xl" />
-          </Form.Item>
-          <label htmlFor="password" className="text-xl">
+          <label htmlFor="password" className="text-xl mt-10">
             Password
           </label>
           <Form.Item<FieldType>
@@ -97,19 +62,24 @@ const ChangePassword = () => {
           >
             <Input.Password className="w-96 h-12 text-xl" />
           </Form.Item>
-          <Link
-            to={"/forgot-password"}
-            className="font-bold text-md my-5 mr-7 text-end -mt-8 cursor-pointer"
+          <label htmlFor="password" className="text-xl">
+            Confirm Password
+          </label>
+          <Form.Item<FieldType>
+            id="password"
+            name="confirmPassword"
+            rules={[{ required: true, message: "Please input your password!" }]}
           >
-            Forgot Password
-          </Link>
+            <Input.Password className="w-96 h-12 text-xl" />
+          </Form.Item>
+
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
               className="flex justify-center items-center  h-14 w-96 text-black bg-[#F6D218] font-bold text-lg px-20 py-5 "
             >
-              Login
+              Save
             </Button>
           </Form.Item>
         </Form>

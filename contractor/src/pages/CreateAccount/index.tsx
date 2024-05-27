@@ -50,7 +50,9 @@ const CreateAccount: React.FC = () => {
 
       if (!userExist) {
         await axios.post("http://localhost:3000/users", formValues);
-        Modal.success({
+        <div>
+
+        Modal.info({
           title: "Thank you for signing up",
           content:
             "Nulla facilisi. Donec molestie vitae est non ullamcorper. Mauris ut efficitur diam. Nullam hendrerit.",
@@ -76,6 +78,7 @@ const CreateAccount: React.FC = () => {
           },
           onCancel() {},
         });
+        </div>
       } else {
         message.warning("User already exists with email: " + formValues.email);
       }
@@ -173,14 +176,21 @@ const CreateAccount: React.FC = () => {
       </div>
 
       {modalVisible && (
-        <div className="min-h-screen bg-[#f2f1ec] w-full flex  justify-center items-center">
-          <CustomSimpleModal
-            visible={modalVisible}
+        // <div className="min-h-screen bg-[#f2f1ec] w-full flex  justify-center items-center">
+          <Modal
+            style={{
+            }}
+            open={modalVisible}
             title="Thank you for signing up"
-            description="Nulla facilisi. Donec molestie vitae est non ullamcorper. Mauris ut efficitur diam. Nullam hendrerit."
             onOk={handleOk}
-          />
-        </div>
+          >
+            <div>
+              Nulla facilisi. Donec molestie vitae est non ullamcorper. Mauris
+              ut efficitur diam. Nullam hendrerit.s
+              <p></p>
+            </div>
+          </Modal>
+        // </div>
       )}
     </>
   );

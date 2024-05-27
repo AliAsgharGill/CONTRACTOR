@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Form, Input, message } from "antd";
-import CustomLabel from "../../components/common/CustomLabel";
+import { Button, Form, Input, message, Modal } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -29,12 +28,15 @@ interface User {
   termAndConditions: string;
 }
 const LoginScreen = () => {
-  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [form] = Form.useForm();
 
+  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     const response = await axios.get("http://localhost:3000/users");
 
     const userExist = response.data.find(
-      (user: User) => user.email === values.email && user.password === values.password
+      (user: User) =>
+        user.email === values.email && user.password === values.password
     );
 
     if (userExist) {
@@ -52,6 +54,27 @@ const LoginScreen = () => {
   };
 
   const navigate = useNavigate();
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    form
+      .validateFields()
+      .then((values) => {
+        console.log("Form values:", values);
+        setIsModalVisible(false);
+        form.resetFields();
+      })
+      .catch((info) => {
+        console.log("Validate Failed:", info);
+      });
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <>
@@ -110,12 +133,12 @@ const LoginScreen = () => {
             >
               <Input.Password className="w-96 h-12 text-xl" />
             </Form.Item>
-            <Link
-              to={"/forgot-password"}
-              className="font-bold text-md my-5 mr-7 text-end -mt-8 cursor-pointer"
+            <label
+              onClick={showModal}
+              className="font-bold text-md my-5 mr-2 text-end -mt-6 cursor-pointer"
             >
               Forgot Password
-            </Link>
+            </label>
             <Form.Item>
               <Button
                 type="primary"
@@ -131,12 +154,82 @@ const LoginScreen = () => {
           <img
             src="src/assets/images/homeImage.png"
             alt="homeImage"
-            className="h-screen"
+            className="h-screen w-full"
           />
         </div>
       </div>
+
+      {isModalVisible && (
+        <Modal
+          title="Forgot Password"
+          open={isModalVisible}
+          onOk={handleOk}
+          style={{
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            justifyContent: "center",
+            margin: "auto",
+            marginTop: "10%",
+          }}
+          okText="Send me the Password Reset Link"
+          okButtonProps={{
+            style: {
+              backgroundColor: "#F6D218",
+              padding: "30px 80px",
+              display: "flex",
+              justifyContent: "center",
+              justifyItems: "center",
+              alignItems: "center",
+              fontWeight: "bold",
+              color: "black",
+              margin: " 0px 50px",
+            },
+          }}
+          cancelButtonProps={{ style: { display: "none" } }}
+          onCancel={handleCancel}
+          footer={null}
+        >
+          <Form
+            form={form}
+            layout="vertical"
+            name="form_in_modal"
+            className="flex flex-col"
+          >
+            <label
+              htmlFor="password"
+              className="mt-10 text-xl text-start ml-12 "
+            >
+              Email
+            </label>
+            <Form.Item<FieldType>
+              name="email"
+              rules={[{ required: true, message: "Please input your email!" }]}
+            >
+              <Input className="w-96 h-12 text-xl ml-12" />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="flex justify-center items-center  m-auto h-14 w-96 text-black bg-[#F6D218] font-bold text-lg px-20 py-5 "
+              >
+                Send me the Password Reset Link
+              </Button>
+            </Form.Item>
+            <label
+              htmlFor=""
+              className="flex justify-center items-center  font-bold"
+            >
+              Didn't get Link?{" "}
+              <Link to="" className="text-teal-500">
+                &nbsp; Resend
+              </Link>{" "}
+            </label>
+          </Form>
+        </Modal>
+      )}
     </>
   );
 };
-
 export default LoginScreen;
