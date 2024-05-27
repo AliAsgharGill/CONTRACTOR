@@ -3,7 +3,7 @@ import { Form, Input, Button, Select, Checkbox, message, Modal } from "antd";
 import { formFields } from "./formFields";
 import axios from "axios";
 import CustomSimpleModal from "../../components/common/CustomSimpleModal";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const { Option } = Select;
 interface User {
@@ -123,13 +123,30 @@ const CreateAccount: React.FC = () => {
                         required: true,
                         message: `Please ${
                           field.type === "checkbox" ? "accept" : "enter"
-                        } ${field.label?.toLowerCase()}!`,
+                        } ${field.label.toLowerCase()}!`,
                       },
                     ]}
-                    label={field.label}
+                    label={
+                      field.label
+                    }
                   >
                     {field.type === "checkbox" ? (
-                      <Checkbox>{field.label}</Checkbox>
+                      <Checkbox>
+                        <div>
+                          {" "}
+                          Agree to
+                          <Link
+                            to="/terms-and-conditions"
+                            className="text-[#0A5F59]"
+                          >
+                            &nbsp;Terms and Conditions
+                          </Link>
+                          &nbsp; and{" "}
+                          <Link to="/privacy-policy" className="text-[#0A5F59]">
+                            Privacy Policy
+                          </Link>{" "}
+                        </div>
+                      </Checkbox>
                     ) : field.type === "select" ? (
                       <Select
                         className="w-96 h-12"
@@ -141,6 +158,12 @@ const CreateAccount: React.FC = () => {
                           </Option>
                         ))}
                       </Select>
+                    ) : field.type === "password" ? (
+                      <Input.Password
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className="w-96 h-12"
+                      />
                     ) : (
                       <Input
                         type={field.type}

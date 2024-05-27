@@ -9,7 +9,7 @@ const Main = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 300);
+    }, 3000);
   }, []);
 
   return <>{loading ? <SplashScreen /> : <HomeScreen />}</>;
