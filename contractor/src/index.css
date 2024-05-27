@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 .custom-btn {
-    padding: inherit !important;
-  }
-  
+  padding: inherit !important;
+}
+
+.center-modal-button .ant-modal-confirm-btns {
+  @apply flex justify-center;
+  /* padding: 30px; */
+}

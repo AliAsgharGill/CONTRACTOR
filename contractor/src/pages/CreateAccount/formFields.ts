@@ -270,7 +270,7 @@ export const formFields = [
   },
   {
     name: "termAndConditions",
-    label: "Term and Conditions",
+    label: "Terms and Conditions & Privacy Policy",
     type: "checkbox",
   },
 ];
