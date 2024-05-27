@@ -4,6 +4,8 @@ import { formFields } from "./formFields";
 import axios from "axios";
 import CustomSimpleModal from "../../components/common/CustomSimpleModal";
 import { Link, useNavigate } from "react-router-dom";
+import CustomInput from "../../components/common/CustomInput";
+import CustomButton from "../../components/common/CustomButton";
 
 const { Option } = Select;
 interface User {
@@ -126,9 +128,10 @@ const CreateAccount: React.FC = () => {
                         } ${field.label.toLowerCase()}!`,
                       },
                     ]}
-                    label={
-                      field.label
-                    }
+                    label={field.label === "checkbox" ? "" : field.label}
+                    label={field.label === "password" ? "" : field.label}
+                    label={field.label === "confirmPassword" ? "" : field.label}
+                    label={field.label === "Terms and Conditions & Privacy Policy" ? "" : field.label}
                   >
                     {field.type === "checkbox" ? (
                       <Checkbox>
@@ -165,22 +168,24 @@ const CreateAccount: React.FC = () => {
                         className="w-96 h-12"
                       />
                     ) : (
-                      <Input
+                      <CustomInput
                         type={field.type}
-                        placeholder={field.placeholder}
+                        // label={field.label  }
                         className="w-96 h-12"
+                        placeholder={field.placeholder}
                       />
                     )}
                   </Form.Item>
                 ))}
                 <Form.Item>
-                  <Button
-                    type="primary"
+                  <CustomButton
+                    type="dashed"
                     htmlType="submit"
-                    className="bg-[#F6D218] text-black w-full py-8 flex justify-center items-center font-bold text-xl"
+                    size="large"
+                    className="bg-[#F6D218] text-[#000]   w-full py-12 flex justify-center items-center font-bold text-xl"
                   >
                     Create Account
-                  </Button>
+                  </CustomButton>
                 </Form.Item>
               </div>
             </Form>

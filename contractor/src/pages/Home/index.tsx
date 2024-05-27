@@ -47,15 +47,20 @@ const HomeScreen = () => {
           <CustomButton
             className="mb-10 lg:w-60 mt-8 md:w-1/3 p-6 flex justify-center items-center bg-[#F6D218] font-bold text-black hover:bg-[#d8c045]"
             onClick={() => navigate("/create-account")}
-            text="Create Account"
-          />
+            size="large"
+          >
+            Create Account
+          </CustomButton>
         </div>
         <div className="h-4 sm:h-full sm:w-full lg:w-auto flex flex-col items-center lg:items-end mt-8 lg:mt-0">
           <CustomButton
             onClick={() => navigate("/login")}
-            className="flex justify-center items-center h-12 w-32 md:fixed md:bottom-4 lg:bottom-auto lg:top-5 right-4 lg:right-12 z-20 bg-transparent border border-green-600 text-green-600 "
-            text="Login"
-          />
+            size="large"
+
+            className="flex justify-center items-center h-12 w-32 md:fixed md:bottom-4 lg:bottom-auto lg:top-5 right-4 lg:right-12 z-20 bg-transparent border border-green-700 text-green-700 "
+          >
+            Login
+          </CustomButton>
           <img
             src="src/assets/images/homeImage.png"
             alt="homeImage"

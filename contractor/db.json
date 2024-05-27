@@ -2,6 +2,60 @@
   "users": [
     {
       "id": "1d09"
+    },
+    {
+      "id": "abaf",
+      "companyName": "Ali Asghar",
+      "address": "Street No #20 Mohallah Bilal Nagar Badar Sher Bahawalpur",
+      "companyPostalCode": "63100",
+      "city": "Bahawalpur, Punjab, Pakistan",
+      "email": "admin@gmail.com",
+      "zipPostalCode": "63100",
+      "phone": "03026822324",
+      "stateProvince": "Punjab",
+      "position": "Ali Asghar",
+      "country": "Pakistan",
+      "password": "Admin@123",
+      "companyPhone": "SaadRazi@gmailcom",
+      "confirmPassword": "Saad Razi",
+      "accountingEmail": "stylinalivlogs@gmail.com",
+      "termAndConditions": true
+    },
+    {
+      "id": "75d8",
+      "companyName": "Schaefer and Sons",
+      "address": "86173 Schowalter Loop",
+      "companyPostalCode": "Gerhold - Erdman",
+      "city": "Corpus Christi",
+      "email": "your.email+fakedata20400@gmail.com",
+      "zipPostalCode": "18729",
+      "phone": "208-977-6467",
+      "stateProvince": "New Hampshire",
+      "position": "Bogisich, Johnston and Wolff",
+      "country": "Armenia",
+      "password": "7nqI08ZEKCXfgS4",
+      "companyPhone": "333-963-8193",
+      "confirmPassword": "7nqI08ZEKCXfgS4",
+      "accountingEmail": "your.email+fakedata74704@gmail.com",
+      "termAndConditions": true
+    },
+    {
+      "id": "cbc8",
+      "companyName": "Ali Asghar",
+      "address": "Street No #20 Mohallah Bilal Nagar Badar Sher Bahawalpur",
+      "companyPostalCode": "63100",
+      "city": "Bahawalpur, Punjab, Pakistan",
+      "email": "admin11@gmail.com",
+      "zipPostalCode": "63100",
+      "phone": "03026822324",
+      "stateProvince": "Punjab",
+      "position": "Ali Asghar",
+      "country": "Angola",
+      "password": "Admin@123",
+      "companyPhone": "aliasghar@gmail.com",
+      "confirmPassword": "ali@1234",
+      "accountingEmail": "stylinalivlogs@gmail.com",
+      "termAndConditions": true
     }
   ]
 }
