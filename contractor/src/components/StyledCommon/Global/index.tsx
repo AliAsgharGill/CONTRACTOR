@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
     body {
@@ -7,3 +7,16 @@ export const Global = createGlobalStyle`
         margin: 0;
         padding: 0;
     }`;
+
+export const MainDivAside = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 100vh;
+  margin-left: 26em;
+  margin-top: 6em;
+  /* background-color: red; */
+  /* border: 2px solid black; */
+`;
+
+

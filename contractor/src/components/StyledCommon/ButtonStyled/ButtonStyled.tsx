@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ButtonHTMLAttributes } from "react";
 
 interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "default" | "custom";
+  variant?: "primary" | "secondary" | "default" | "outlined" | "custom";
   bgColor?: string;
   textColor?: string;
   borderColor?: string;
@@ -29,6 +29,19 @@ const getButtonStyles = (props: CustomButtonProps) => {
         hoverBgColor: props.hoverBgColor || "#084C47",
         hoverTextColor: props.hoverTextColor || "white",
         hoverBorderColor: props.hoverBorderColor || "none",
+      };
+    case "outlined":
+      return {
+        background: props.bgColor || "",
+        color: props.textColor || "#0A5F59",
+        border: props.borderColor || "1px solid #0A5F59",
+        padding: props.padding || "0.5em 1em",
+        fontSize: props.fontSize || "1em",
+        fontWeight: props.fontWeight || "500",
+        radius: props.radius || "3px",
+        hoverBgColor: props.hoverBgColor || "#084C47",
+        hoverTextColor: props.hoverTextColor || "white",
+        hoverBorderColor: props.hoverBorderColor || "#0A5F59",
       };
     case "secondary":
       return {

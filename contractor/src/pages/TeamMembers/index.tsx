@@ -1,8 +1,12 @@
+import { MainDivAside } from "../../components/StyledCommon/Global";
+
 const TeamMembers = () => {
   return (
-    <div>
-      <>Team Members</>
-    </div>
+    <>
+      <MainDivAside>
+        <>Team Members</>
+      </MainDivAside>
+    </>
   );
 };
 

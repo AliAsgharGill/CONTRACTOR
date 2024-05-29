@@ -1,9 +1,11 @@
-import Sidebar from "../../components/StyledCommon/Sidebar";
+import { MainDivAside } from "../../components/StyledCommon/Global";
 
 const Dashboard = () => {
   return (
     <>
-      <Sidebar />
+      <MainDivAside>
+        <h1>Dashboard</h1>
+      </MainDivAside>
     </>
   );
 };

@@ -1,7 +1,11 @@
+import { MainDivAside } from "../../components/StyledCommon/Global";
+
 const AccountOverview = () => {
   return (
     <>
-      <h1>Account Overview</h1>
+      <MainDivAside>
+        <h1>Account Overview</h1>
+      </MainDivAside>
     </>
   );
 };

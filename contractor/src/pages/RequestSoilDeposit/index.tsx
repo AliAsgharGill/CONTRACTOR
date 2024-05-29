@@ -1,7 +1,11 @@
+import { MainDivAside } from "../../components/StyledCommon/Global";
+
 const RequestSoilDeposit = () => {
   return (
     <>
-      <h1>Request Soil Deposit</h1>
+      <MainDivAside>
+        <h1>Request Soil Deposit</h1>
+      </MainDivAside>
     </>
   );
 };

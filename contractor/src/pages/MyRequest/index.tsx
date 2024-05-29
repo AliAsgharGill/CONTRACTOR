@@ -1,7 +1,11 @@
+import { MainDivAside } from "../../components/StyledCommon/Global";
+
 const MyRequest = () => {
   return (
     <>
-      <h1>My Request</h1>
+      <MainDivAside>
+        <h1>My Request</h1>
+      </MainDivAside>
     </>
   );
 };
