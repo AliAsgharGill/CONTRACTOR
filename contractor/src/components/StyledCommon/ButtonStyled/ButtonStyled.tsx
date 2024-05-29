@@ -13,88 +13,85 @@ interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hoverBgColor?: string;
   hoverTextColor?: string;
   hoverBorderColor?: string;
+  height?: string;
+  width?: string;
+  margin?: string;
+  transitionDuration?: string;
 }
 
 const getButtonStyles = (props: CustomButtonProps) => {
+  const defaultStyles = {
+    padding: props.padding || "0.5em 1em",
+    fontSize: props.fontSize || "1em",
+    fontWeight: props.fontWeight || "normal",
+    radius: props.radius || "3px",
+    height: props.height || "auto",
+    width: props.width || "auto",
+    margin: props.margin || "0.1em",
+    transitionDuration: props.transitionDuration || "0.3s",
+  };
+
   switch (props.variant) {
     case "primary":
       return {
         background: props.bgColor || "#0A5F59",
         color: props.textColor || "white",
         border: props.borderColor || "none",
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "500",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || "#084C47",
         hoverTextColor: props.hoverTextColor || "white",
         hoverBorderColor: props.hoverBorderColor || "none",
+        ...defaultStyles,
       };
     case "outlined":
       return {
-        background: props.bgColor || "",
+        background: props.bgColor || "transparent",
         color: props.textColor || "#0A5F59",
         border: props.borderColor || "1px solid #0A5F59",
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "500",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || "#084C47",
         hoverTextColor: props.hoverTextColor || "white",
         hoverBorderColor: props.hoverBorderColor || "#0A5F59",
+        ...defaultStyles,
       };
     case "secondary":
       return {
         background: props.bgColor || "#F6D218",
         color: props.textColor || "black",
         border: props.borderColor || "none",
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "700",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || "#DDB114",
         hoverTextColor: props.hoverTextColor || "black",
         hoverBorderColor: props.hoverBorderColor || "none",
+        ...defaultStyles,
       };
     case "default":
       return {
         background: props.bgColor || "white",
         color: props.textColor || "#000",
         border: props.borderColor || "1px solid #000",
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "normal",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || "#f0f0f0",
         hoverTextColor: props.hoverTextColor || "#000",
-        hoverBorderColor: props.hoverBorderColor ? "#000" : "none",
+        hoverBorderColor: props.hoverBorderColor || "#000",
+        ...defaultStyles,
       };
     case "custom":
       return {
         background: props.bgColor || "white",
         color: props.textColor || "#000",
         border: props.borderColor || `1px solid ${props.borderColor || "#000"}`,
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "normal",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || props.bgColor || "white",
         hoverTextColor: props.hoverTextColor || props.textColor || "#000",
         hoverBorderColor:
           props.hoverBorderColor || `1px solid ${props.borderColor || "#000"}`,
+        ...defaultStyles,
       };
     default:
       return {
         background: props.bgColor || "white",
         color: props.textColor || "#000",
         border: props.borderColor || "1px solid #000",
-        padding: props.padding || "0.5em 1em",
-        fontSize: props.fontSize || "1em",
-        fontWeight: props.fontWeight || "normal",
-        radius: props.radius || "3px",
         hoverBgColor: props.hoverBgColor || "#f0f0f0",
         hoverTextColor: props.hoverTextColor || "#000",
         hoverBorderColor: props.hoverBorderColor || "#000",
+        ...defaultStyles,
       };
   }
 };
@@ -112,6 +109,10 @@ const shouldForwardProp = (prop: string) =>
     "hoverBgColor",
     "hoverTextColor",
     "hoverBorderColor",
+    "height",
+    "width",
+    "margin",
+    "transitionDuration",
   ].includes(prop);
 
 const CustomButton = styled.button.withConfig({
@@ -127,8 +128,10 @@ const CustomButton = styled.button.withConfig({
       font-size: ${styles.fontSize};
       font-weight: ${styles.fontWeight};
       border-radius: ${styles.radius};
-      margin: 0.1em;
-      transition: background 0.3s, color 0.3s, border 0.3s;
+      height: ${styles.height};
+      width: ${styles.width};
+      margin: ${styles.margin};
+      transition: background ${styles.transitionDuration}, color ${styles.transitionDuration}, border ${styles.transitionDuration};
 
       &:hover {
         background: ${styles.hoverBgColor};

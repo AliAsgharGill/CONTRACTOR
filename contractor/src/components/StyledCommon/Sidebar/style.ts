@@ -4,7 +4,7 @@ export const SidebarDiv = styled.div`
   background-color: #0a5f59;
   width: 25em;
   height: 100vh;
-  padding: 1.5em;
+  padding: 2.5em;
   position: fixed;
   top: 0;
   left: 0;
@@ -58,9 +58,5 @@ export const Title = styled.h1`
   }
   &:focus {
     color: green;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
   }
 `;

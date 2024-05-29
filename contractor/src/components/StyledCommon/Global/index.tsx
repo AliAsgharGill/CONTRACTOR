@@ -10,13 +10,10 @@ export const Global = createGlobalStyle`
 
 export const MainDivAside = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: start;
   align-items: start;
   height: 100vh;
   margin-left: 26em;
   margin-top: 6em;
-  /* background-color: red; */
-  /* border: 2px solid black; */
 `;
-
-

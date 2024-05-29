@@ -1,11 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { SidebarContainer, SidebarDiv, Spacer, Title } from "./style";
+import Img from "../Global/Img";
 
 const Sidebar = () => {
   return (
     <>
       <SidebarDiv>
-        <img src="src/assets/images/LogoWithName.png" alt="logo" />
+        <Link to="/dashboard">
+          <Img src="src/assets/images/LogoWithName.png" alt="logo" />
+        </Link>
         <Spacer />
 
         <SidebarContainer>
@@ -94,7 +97,7 @@ const Sidebar = () => {
             }}
           >
             <svg
-              width="18"
+              width="23"
               height="22"
               viewBox="0 0 18 22"
               fill="none"
@@ -187,7 +190,7 @@ const Sidebar = () => {
             }}
           >
             <svg
-              width="24"
+              width="23"
               height="20"
               viewBox="0 0 24 20"
               fill="none"
@@ -237,7 +240,7 @@ const Sidebar = () => {
             }}
           >
             <svg
-              width="20"
+              width="23"
               height="20"
               viewBox="0 0 20 20"
               fill="none"
