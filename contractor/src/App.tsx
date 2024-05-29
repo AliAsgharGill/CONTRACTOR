@@ -11,6 +11,7 @@ import CreateAccount from "./pages/CreateAccount";
 import Login from "./pages/LoginScreen";
 import PageNotFound from "./pages/PageNotFound";
 import ChangePassword from "./pages/ChangePassword";
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route index path="/create-account" element={<CreateAccount />} />
       <Route index path="/login" element={<Login />} />
       <Route index path="/change-password" element={<ChangePassword />} />
+      <Route index path="/dashboard" element={<Dashboard />} />
       <Route index path="*" element={<PageNotFound />} />
     </Route>
   )

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Select, Checkbox, message, Modal } from "antd";
+import { Form, Input, Select, Checkbox, message, Modal } from "antd";
 import { formFields } from "./formFields";
 import axios from "axios";
-import CustomSimpleModal from "../../components/common/CustomSimpleModal";
 import { Link, useNavigate } from "react-router-dom";
 import CustomInput from "../../components/common/CustomInput";
 import CustomButton from "../../components/common/CustomButton";

@@ -1,6 +1,6 @@
 import React from "react";
-import { Input, Form } from "antd";
-import classNames from "classnames";
+import { Input as AntdInput, Form as AntdForm } from "antd";
+import styled from "styled-components";
 
 interface CustomInputProps {
   type?: string;
@@ -9,11 +9,30 @@ interface CustomInputProps {
   label?: string;
   helperText?: string;
   placeholder?: string;
+  width?: string;
   errorMessage?: string;
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+const FormItem = styled(AntdForm.Item)`
+  /* Add any custom styles here */
+`;
+
+const Input = styled(AntdInput)<{ error?: boolean }>`
+  &.custom-input {
+    border-color: ${(props) => (props.error ? "red" : "")};
+    &:hover {
+      border-color: ${(props) => (props.error ? "darkred" : "")};
+    }
+  }
+`;
+
+const ErrorMessage = styled.p`
+  color: green;
+  margin-top: 10px;
+`;
 
 const CustomInput: React.FC<CustomInputProps> = ({
   type = "text",
@@ -25,10 +44,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
   errorMessage,
   className,
   value,
+  width,
   onChange,
 }) => {
   return (
-    <Form.Item
+    <FormItem
       label={label}
       help={helperText}
       validateStatus={errorMessage ? "error" : ""}
@@ -36,16 +56,22 @@ const CustomInput: React.FC<CustomInputProps> = ({
       className={className}
     >
       <Input
+        width={width}
         type={type}
         name={name}
         id={id}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={classNames("custom-input", className)}
+        className="custom-input"
+        error={!!errorMessage}
+        autoFocus
+        // autoCapitalize="off"
+        // autoCorrect="on"
+        autoComplete="on"
       />
-      <p className="text-green-500 mt-10" >{errorMessage}</p>
-    </Form.Item>
+      <ErrorMessage>{errorMessage}</ErrorMessage>
+    </FormItem>
   );
 };
 
