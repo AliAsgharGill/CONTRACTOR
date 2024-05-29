@@ -40,7 +40,7 @@ const LoginScreen = () => {
     );
 
     if (userExist) {
-      navigate("/");
+      navigate("/dashboard");
     } else {
       message.error("User does not exist");
     }

@@ -12,16 +12,26 @@ import Login from "./pages/LoginScreen";
 import PageNotFound from "./pages/PageNotFound";
 import ChangePassword from "./pages/ChangePassword";
 import Dashboard from "./pages/Dashboard";
+import RequestSoilDeposit from "./pages/RequestSoilDeposit";
+import MyRequest from "./pages/MyRequest";
+import TeamMembers from "./pages/TeamMembers";
+import AccountOverview from "./pages/AccountOverview/AccountOverview";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index path="/" element={<Main />} />
-      <Route index path="/create-account" element={<CreateAccount />} />
-      <Route index path="/login" element={<Login />} />
-      <Route index path="/change-password" element={<ChangePassword />} />
-      <Route index path="/dashboard" element={<Dashboard />} />
-      <Route index path="*" element={<PageNotFound />} />
+      <Route path="/create-account" element={<CreateAccount />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/change-password" element={<ChangePassword />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/request-soil-deposit" element={<RequestSoilDeposit />} />
+      <Route path="/my-request" element={<MyRequest />} />
+      <Route path="/team-members" element={<TeamMembers />} />
+      <Route path="/account-overview" element={<AccountOverview />} />
+
+      {/* No Route Found */}
+      <Route path="*" element={<PageNotFound />} />
     </Route>
   )
 );

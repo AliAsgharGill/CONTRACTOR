@@ -10,3 +10,6 @@
   @apply flex justify-center;
   /* padding: 30px; */
 }
+.active {
+  color: #222831;
+}
