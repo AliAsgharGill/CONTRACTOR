@@ -17,6 +17,8 @@ interface CustomInputProps extends AntInputProps {
   width?: string;
   margin?: string;
   transitionDuration?: string;
+  border?: string;
+  outline?: string;
 }
 
 const StyledInput = styled(AntInput)<CustomInputProps>`
@@ -30,11 +32,13 @@ const StyledInput = styled(AntInput)<CustomInputProps>`
   height: ${({ height }) => height || "initial"};
   width: ${({ width }) => width || "initial"};
   margin: ${({ margin }) => margin || "initial"};
+  border: ${({ border }) => border || "initial"};
+  outline: ${({ outline }) => outline || "initial"};
   transition: all ${({ transitionDuration }) => transitionDuration || "0.3s"}
     ease;
 
   &:hover {
-    background-color: ${({ hoverBgColor }) => hoverBgColor || "initial"};
+    background-color: ${({ hoverBgColor }) => hoverBgColor || ""};
     color: ${({ hoverTextColor }) => hoverTextColor || "initial"};
     border-color: ${({ hoverBorderColor }) => hoverBorderColor || "initial"};
     outline: none;

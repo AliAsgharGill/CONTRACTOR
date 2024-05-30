@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "default" | "outlined" | "custom";
@@ -17,6 +17,8 @@ interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string;
   margin?: string;
   transitionDuration?: string;
+  prefixIcon?: ReactNode;
+  postfixIcon?: ReactNode;
 }
 
 const getButtonStyles = (props: CustomButtonProps) => {
@@ -113,6 +115,8 @@ const shouldForwardProp = (prop: string) =>
     "width",
     "margin",
     "transitionDuration",
+    "prefixIcon",
+    "postfixIcon",
   ].includes(prop);
 
 const CustomButton = styled.button.withConfig({
@@ -121,6 +125,9 @@ const CustomButton = styled.button.withConfig({
   ${(props) => {
     const styles = getButtonStyles(props);
     return `
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: ${styles.background};
       color: ${styles.color};
       border: ${styles.border};
@@ -138,8 +145,34 @@ const CustomButton = styled.button.withConfig({
         color: ${styles.hoverTextColor};
         border: ${styles.hoverBorderColor};
       }
+
+      .icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .prefix-icon {
+        margin-right: 0.5em;
+      }
+
+      .postfix-icon {
+        margin-left: 0.5em;
+      }
     `;
   }}
 `;
 
-export default CustomButton;
+const ButtonWithIcons: React.FC<CustomButtonProps> = ({
+  prefixIcon,
+  postfixIcon,
+  children,
+  ...props
+}) => (
+  <CustomButton {...props}>
+    {prefixIcon && <span className="icon prefix-icon">{prefixIcon}</span>}
+    {children}
+    {postfixIcon && <span className="icon postfix-icon">{postfixIcon}</span>}
+  </CustomButton>
+);
+
+export default ButtonWithIcons;

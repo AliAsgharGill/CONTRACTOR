@@ -19,11 +19,26 @@ export const StyledRadioButton = styled(AntdRadio)`
     border-color: #606060;
     width: 1.2rem;
     height: 1.2rem;
-}   
-.ant-radio-checked .ant-radio-inner {
+  }
+  .ant-radio-checked .ant-radio-inner {
     background-color: #0a5f59;
   }
   .ant-radio-wrapper:hover .ant-radio .ant-radio-inner {
     border-color: #0a5f59;
   }
+`;
+
+export const SolidHR = styled.hr`
+  border: none;
+  border-top: 2px solid #606060;
+  margin: 20px 0;
+  color: #606060;
+`;
+
+
+export const DashedHR = styled.hr`
+  border: none;
+  border-top: 2px dashed #606060;
+  margin: 20px 0;
+  color: #606060;
 `;
