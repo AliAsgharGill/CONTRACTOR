@@ -6,23 +6,31 @@ import { listData } from "./data";
 const Notification = () => {
   return (
     <>
-      {listData.map((data, index) => (
-        <Div display="flex" width="100%"  margin="2rem 0" key={index}>
+      {listData.map((data) => (
+        <Div display="flex" width="100%" margin="2rem 0" key={data.id}>
           <Div
             backgroundColor="white"
             alignItems="center"
             justifyContent="center"
             padding="1rem 1rem"
+            borderWidth=" 2px 0 0 0"
+            borderColor="green"
+            borderStyle="solid"
             borderRadius="8px"
-            margin="1rem 1rem 0 5rem"
-            width="15%"
+            margin="0 1rem 0 5rem"
+            width="8%"
             height="10%"
           >
             <Title fontSize="1em" fontWeight="900" textAlign="center">
               {data.date}
             </Title>
             <hr />
-            <Title fontSize="0.8em" fontWeight="400" textAlign="center">
+            <Title
+              fontSize="0.8em"
+              padding="0.5rem 0"
+              fontWeight="400"
+              textAlign="center"
+            >
               {data.time}
             </Title>
           </Div>
@@ -30,6 +38,7 @@ const Notification = () => {
             width="100%"
             margin="0rem 0rem"
             display="flex"
+            justifyContent="space-between"
             backgroundColor="white"
             alignItems="center"
             padding=" 0 1rem  0 1rem"
@@ -67,3 +76,4 @@ const Notification = () => {
 };
 
 export default Notification;
+  
