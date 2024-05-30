@@ -40,9 +40,9 @@ export const NavLinking = styled.a`
 export const Title = styled.h1`
   font-family: "Inter", sans-serif;
   color: #83cdc8;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  font-size: 1.5em;
+  margin-bottom: 0.2rem;
+  font-weight: 5600;
+  font-size: 1.2em;
   margin-left: 2rem;
   &:hover {
     color: aliceblue;

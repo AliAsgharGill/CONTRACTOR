@@ -35,11 +35,11 @@ const Sidebar = () => {
                 width="9.99994"
                 height="12.9999"
                 rx="1"
-                stroke="white"
+                stroke="#83CDC8"
                 stroke-width="2.4"
                 mask="url(#path-1-inside-1_43_789)"
               />
-              <mask id="path-2-inside-2_43_789" fill="white">
+              <mask id="path-2-inside-2_43_789" fill="#83CDC8">
                 <rect
                   x="12"
                   y="14.9999"
@@ -54,22 +54,22 @@ const Sidebar = () => {
                 width="9.99994"
                 height="7.49996"
                 rx="1"
-                stroke="white"
+                stroke="#83CDC8"
                 stroke-width="2.4"
                 mask="url(#path-2-inside-2_43_789)"
               />
-              <mask id="path-3-inside-3_43_789" fill="white">
+              <mask id="path-3-inside-3_43_789" fill="#83CDC8">
                 <rect width="9.99994" height="7.49996" rx="1" />
               </mask>
               <rect
                 width="9.99994"
                 height="7.49996"
                 rx="1"
-                stroke="white"
+                stroke="#83CDC8"
                 stroke-width="2.4"
                 mask="url(#path-3-inside-3_43_789)"
               />
-              <mask id="path-4-inside-4_43_789" fill="white">
+              <mask id="path-4-inside-4_43_789" fill="#83CDC8">
                 <rect y="9.49988" width="9.99994" height="12.9999" rx="1" />
               </mask>
               <rect
@@ -77,7 +77,7 @@ const Sidebar = () => {
                 width="9.99994"
                 height="12.9999"
                 rx="1"
-                stroke="white"
+                stroke="#83CDC8"
                 stroke-width="2.4"
                 mask="url(#path-4-inside-4_43_789)"
               />
@@ -97,7 +97,7 @@ const Sidebar = () => {
             }}
           >
             <svg
-              width="23"
+              width="22"
               height="22"
               viewBox="0 0 18 22"
               fill="none"

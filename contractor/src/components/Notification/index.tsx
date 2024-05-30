@@ -117,7 +117,6 @@ const Notification = () => {
           width="37rem"
           backgroundColor="#f0f0f0"
           color="#000"
-          // border="1px solid red"
           radius="10px"
           okText="Confirm"
           cancelText="Close"
