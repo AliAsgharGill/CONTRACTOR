@@ -1,199 +1,131 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import { StyledRadioButton, StyledRadioGroup, StyledSelected } from "./style";
+import Div from "../StyledCommon/Global/Div";
+import Title from "../StyledCommon/Global/Title";
+import CustomInput from "../StyledCommon/InputStyled";
+import { useState } from "react";
+import CustomButton from "../StyledCommon/ButtonStyled/ButtonStyled";
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
+const Form = () => {
+  const [elements, setElements] = useState([0]);
 
-const Row = styled.div`
-  display: flex;
-  gap: 10px;
-  align-items: center;
-`;
+  const addElement = () => {
+    setElements([...elements, elements.length]);
+  };
 
-const AddButton = styled.button`
-  padding: 5px 10px;
-`;
-
-const Label = styled.label`
-  font-weight: bold;
-`;
-
-interface SelectProps {
-  options: string[];
-  value: string;
-  onChange: (value: string) => void;
-}
-
-const Select: React.FC<SelectProps> = ({ options, value, onChange }) => {
   return (
     <>
-      <Label>Material Name</Label>
-      <select value={value} onChange={(e) => onChange(e.target.value)}>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
+      <div>
+        {elements.map((element, index) => (
+          // <Div key={index} display="flex">
+          //   <Div>
+          //     <Title>Material Name</Title>
+          //     <StyledSelected defaultValue={"RL"}>
+          //       <option value="AG">AG</option>
+          //       <option value="RL">RL</option>
+          //       <option value="CL">CL</option>
+          //       <option value="IL">IL</option>
+          //       <option value="IL+">IL+</option>
+          //     </StyledSelected>
+          //   </Div>
+          //   <Div margin="0 3rem">
+          //     <Title>Material type</Title>
+          //     <StyledRadioGroup>
+          //       <Div display="flex" margin="1rem 0rem">
+          //         <StyledRadioButton
+          //           name={`materialType${index}`}
+          //           value="Structural"
+          //         />
+          //         Structural
+          //         <StyledRadioButton
+          //           name={`materialType${index}`}
+          //           value="Non-Structural"
+          //         />
+          //         Non-Structural
+          //       </Div>
+          //     </StyledRadioGroup>
+          //   </Div>
+          //   <Div margin="0 3rem">
+          //     <Title>Material Amount</Title>
+          //     <StyledRadioGroup>
+          //       <Div display="flex" margin="1rem 0rem">
+          //         <StyledRadioButton
+          //           name={`materialAmount${index}`}
+          //           value="metricTonnes"
+          //         />
+          //         Metric Tonnes
+          //         <StyledRadioButton
+          //           name={`materialAmount${index}`}
+          //           value="m3"
+          //         />
+          //         m<sup>3</sup>
+          //       </Div>
+          //     </StyledRadioGroup>
+          //   </Div>
+          //   <Div margin="0 3rem">
+          //     <CustomInput
+          //       type="number"
+          //       padding="0.6rem"
+          //       margin="2rem 0 0 0"
+          //       bgColor="white"
+          //       borderColor="white"
+          //       radius="4px"
+          //       placeholder="00,00"
+          //     />
+          //   </Div>
+          // </Div>
+          <Div display="flex" margin="1rem 0">
+            <Div>
+              <Title>Material Name</Title>
+              <StyledSelected defaultValue={"RL"}>
+                <StyledSelected.Option value="AG">AG</StyledSelected.Option>
+                <StyledSelected.Option value="RL">RL</StyledSelected.Option>
+                <StyledSelected.Option value="CL">CL</StyledSelected.Option>
+                <StyledSelected.Option value="IL">IL</StyledSelected.Option>
+                <StyledSelected.Option value="IL+">IL+</StyledSelected.Option>
+              </StyledSelected>
+            </Div>
+            <Div margin="0 3rem">
+              <Title>Material type</Title>
+              <StyledRadioGroup>
+                <Div display="flex" margin="1rem 0rem">
+                  <StyledRadioButton value="Structural">
+                    Structural
+                  </StyledRadioButton>
+                  <StyledRadioButton value="Non-Structural">
+                    Non-Structural
+                  </StyledRadioButton>
+                </Div>
+              </StyledRadioGroup>
+            </Div>
+            <Div margin="0 3rem">
+              <Title>Material type</Title>
+              <StyledRadioGroup>
+                <Div display="flex" margin="1rem 0rem">
+                  <StyledRadioButton value="matricTonnes">
+                    Metric Tonnes
+                  </StyledRadioButton>
+                  <StyledRadioButton value="Non-Structural">
+                    m<sup>3</sup>
+                  </StyledRadioButton>
+                </Div>
+              </StyledRadioGroup>
+            </Div>
+            <Div margin="0 3rem">
+              <CustomInput
+                type="number"
+                padding="0.6rem"
+                margin="2rem 0 0 0"
+                bgColor="white"
+                borderColor="white"
+                radius="4px"
+                placeholder="00,00"
+              />
+            </Div>
+          </Div>
         ))}
-      </select>
+        <CustomButton  variant="outlined" onClick={addElement}>Add More</CustomButton>
+      </div>
     </>
-  );
-};
-
-interface RadioProps {
-  id: string;
-  name: string;
-  value: string;
-  label: string;
-  checked: boolean;
-  onChange: (value: string) => void;
-}
-
-const Radio: React.FC<RadioProps> = ({
-  id,
-  name,
-  value,
-  label,
-  checked,
-  onChange,
-}) => {
-  return (
-    <div>
-      <input
-        type="radio"
-        id={id}
-        name={name}
-        value={value}
-        checked={checked}
-        onChange={() => onChange(value)}
-      />
-      <label htmlFor={id}>{label}</label>
-    </div>
-  );
-};
-
-const NumberInput = styled.input`
-  width: 60px;
-`;
-
-interface FormFieldProps {
-  id: number;
-  data: FormData;
-  onChange: (id: number, field: string, value: string) => void;
-}
-
-interface FormData {
-  material: string;
-  type: string;
-  amount: string;
-  number: string;
-}
-
-const FormField: React.FC<FormFieldProps> = ({ id, data, onChange }) => {
-  return (
-    <Row key={id}>
-      <div>
-        <Select
-          options={["Select", "Material 1", "Material 2", "Material 3"]}
-          value={data.material}
-          onChange={(value) => onChange(id, "material", value)}
-        />
-      </div>
-      <div>
-        <Label>Material Type</Label>
-        <Radio
-          id={`structure${id}`}
-          name={`type${id}`}
-          value="structure"
-          label="Structure"
-          checked={data.type === "structure"}
-          onChange={(value) => onChange(id, "type", value)}
-        />
-        <Radio
-          id={`nonstructure${id}`}
-          name={`type${id}`}
-          value="nonstructure"
-          label="Non-Structure"
-          checked={data.type === "nonstructure"}
-          onChange={(value) => onChange(id, "type", value)}
-        />
-      </div>
-      <div>
-        <Label>Material Amount</Label>
-        <br />
-        <Radio
-          id={`metrictons${id}`}
-          name={`amount${id}`}
-          value="metrictons"
-          label="Metric Tons"
-          checked={data.amount === "metrictons"}
-          onChange={(value) => onChange(id, "amount", value)}
-        />
-        <Radio
-          id={`m3${id}`}
-          name={`amount${id}`}
-          value="m3"
-          label="m3"
-          checked={data.amount === "m3"}
-          onChange={(value) => onChange(id, "amount", value)}
-        />
-      </div>
-      <div>
-        <Label>Number</Label>
-        <NumberInput
-          type="number"
-          value={data.number}
-          onChange={(e) => onChange(id, "number", e.target.value)}
-        />
-      </div>
-    </Row>
-  );
-};
-
-const Form: React.FC = () => {
-  const [fields, setFields] = useState<FormData[]>([
-    { material: "Select", type: "", amount: "", number: "" },
-  ]);
-
-  const addField = () => {
-    setFields([
-      ...fields,
-      { material: "Select", type: "", amount: "", number: "" },
-    ]);
-  };
-
-  const handleChange = (id: number, field: string, value: string) => {
-    const newFields = fields.map((fieldData, index) =>
-      index === id ? { ...fieldData, [field]: value } : fieldData
-    );
-    setFields(newFields);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(fields);
-  };
-
-  return (
-    <FormContainer>
-      <form onSubmit={handleSubmit}>
-        {fields.map((field, index) => (
-          <FormField
-            key={index}
-            id={index}
-            data={field}
-            onChange={handleChange}
-          />
-        ))}
-        <AddButton type="button" onClick={addField}>
-          Add
-        </AddButton>
-        <button type="submit">Submit</button>
-        <input type="file" />
-      </form>
-    </FormContainer>
   );
 };
 

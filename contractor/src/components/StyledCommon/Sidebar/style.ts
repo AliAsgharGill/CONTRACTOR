@@ -41,22 +41,10 @@ export const Title = styled.h1`
   font-family: "Inter", sans-serif;
   color: #83cdc8;
   margin-bottom: 0.2rem;
-  font-weight: 5600;
+  font-weight: 500;
   font-size: 1.2em;
   margin-left: 2rem;
   &:hover {
     color: aliceblue;
-  }
-  &:active {
-    color: blue;
-  }
-  &:visited {
-    color: yellow;
-  }
-  &:link {
-    color: red;
-  }
-  &:focus {
-    color: green;
   }
 `;
