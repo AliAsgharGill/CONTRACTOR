@@ -1,11 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import CustomButton from "../ButtonStyled/ButtonStyled";
 import { ImageDiv, NameDiv, NavbarDiv, SmallTitle, Title } from "./style";
 import Img from "../Global/Img";
 
-const Navbar = () => {
-  const navigate = useNavigate();
+interface NavbarProps {
+  onLogout: () => void;
+}
 
+const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
   return (
     <>
       <NavbarDiv>
@@ -25,7 +26,7 @@ const Navbar = () => {
           variant="outlined"
           padding="0.5em 2em"
           radius="4px"
-          onClick={() => navigate("/login")}
+          onClick={onLogout}
         >
           Log Out
         </CustomButton>

@@ -41,6 +41,7 @@ const LoginScreen = () => {
 
     if (userExist) {
       navigate("/dashboard");
+      localStorage.setItem("user", JSON.stringify(values));
     } else {
       message.error("User does not exist");
     }

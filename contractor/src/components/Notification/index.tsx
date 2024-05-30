@@ -91,7 +91,7 @@ const Notification = () => {
                 width="100%"
                 fontWeight="400"
               >
-                {data.description}
+                {data.description.slice(0, 150) + "..."}
               </Title>
             </Div>
             <CustomButton
@@ -132,7 +132,7 @@ const Notification = () => {
           </Title>
 
           <Title fontSize="1.2rem  ">
-            {item.description.slice(10, 12) + "..."}
+            {item.description}
           </Title>
 
           <Title padding="1rem 0 2rem 0" fontSize="1rem">
