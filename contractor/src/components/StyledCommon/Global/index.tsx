@@ -13,7 +13,7 @@ export const MainDivAside = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: 26em;
   margin-top: 6em;
 `;

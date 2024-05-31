@@ -13,9 +13,9 @@ import CustomInput from "../StyledCommon/CustomInput";
 import CustomButton from "../StyledCommon/ButtonStyled/ButtonStyled";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 import CustomTextArea from "../StyledCommon/Textarea";
-import Img from "../StyledCommon/Global/Img";
 import CustomModal from "../StyledCommon/CustomModal";
 import Spacer from "../StyledCommon/Global/Spacer";
+import axios from "axios";
 
 const { Option } = AntdSelect;
 
@@ -71,8 +71,8 @@ const Form = () => {
     }
   };
 
-  const handleFormSubmit = () => {
-    console.log("Form Values:", {
+  const handleFormSubmit = async () => {
+    await axios.post("http://localhost:3000/requests", {
       elements,
       specialRequest,
       notes,

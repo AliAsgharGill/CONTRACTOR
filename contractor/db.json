@@ -57,5 +57,89 @@
       "accountingEmail": "stylinalivlogs@gmail.com",
       "termAndConditions": true
     }
+  ],
+  "requests": [
+    {
+      "id": "e913",
+      "elements": [
+        {
+          "materialName": "AG",
+          "materialType": "Structural",
+          "amountType": "cubicMeters",
+          "quantity": "100"
+        },
+        {
+          "materialName": "RL",
+          "materialType": "Structural",
+          "amountType": "metricTonnes",
+          "quantity": "200"
+        },
+        {
+          "materialName": "CL",
+          "materialType": "Non-Structural",
+          "amountType": "cubicMeters",
+          "quantity": "300"
+        }
+      ],
+      "specialRequest": "Need Black Soil",
+      "notes": "Make sure its american black",
+      "file": "React_Cheatsheet_Zero_To_Mastery_V1.02.pdf"
+    }
+  ],
+  "projectData": [
+    {
+      "id": 1,
+      "date": "2022-09-22",
+      "site": "Jackman Fill Site",
+      "status": "Approved",
+      "location": "Los Angeles, CA",
+      "material": "CL+ / 36,15 Metric Tones",
+      "details": {
+        "requestSubmittedOn": "Sep 22, 2022",
+        "requestApprovedOn": "Sep 26, 2022",
+        "materialAmount": "36,15 Metric Tons",
+        "operationHours": "08AM - 04:00PM",
+        "address": "12671 New Halls Ferry Rd; Florissant, Mississippi, 63033 US",
+        "maxAllowableTrucksPerDay": 4,
+        "maxAllowableLoadsPerDay": 12,
+        "csrAcceptance": "IL"
+      }
+    },
+    {
+      "id": 2,
+      "date": "2022-10-05",
+      "site": "Jackman Fill Site",
+      "status": "Pending",
+      "location": "Los Angeles, CA",
+      "material": "CL+ / 36,15 Metric Tones",
+      "details": {
+        "requestSubmittedOn": "Oct 05, 2022",
+        "requestApprovedOn": "",
+        "materialAmount": "",
+        "operationHours": "",
+        "address": "",
+        "maxAllowableTrucksPerDay": 0,
+        "maxAllowableLoadsPerDay": 0,
+        "csrAcceptance": ""
+      }
+    },
+    {
+      "id": 3,
+      "date": "2022-11-12",
+      "site": "Jackman Fill Site",
+      "status": "Completed",
+      "location": "Los Angeles, CA",
+      "material": "CL+ / 36,15 Metric Tones",
+      "details": {
+        "requestSubmittedOn": "Nov 12, 2022",
+        "requestApprovedOn": "Nov 16, 2022",
+        "materialAmount": "50,75 Metric Tons",
+        "operationHours": "09AM - 05:00PM",
+        "address": "12671 New Halls Ferry Rd; Florissant, Mississippi, 63033 US",
+        "maxAllowableTrucksPerDay": 5,
+        "maxAllowableLoadsPerDay": 15,
+        "csrAcceptance": "NY"
+      }
+    }
   ]
 }
