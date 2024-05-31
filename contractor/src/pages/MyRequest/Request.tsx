@@ -3,6 +3,7 @@ import Div from "../../components/StyledCommon/Global/Div";
 import CustomButton from "../../components/StyledCommon/ButtonStyled/ButtonStyled";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface dataProps {
   id: number;
@@ -25,7 +26,8 @@ interface dataProps {
 
 const Request = () => {
   const [data, setData] = useState([]);
-
+    
+  const navigate = useNavigate();
   const request = async () => {
     try {
       const response = await axios.get("http://localhost:3000/projectData");
@@ -109,6 +111,7 @@ const Request = () => {
             padding="0.5em 2em"
             radius="4px"
             fontWeight="600"
+            onClick={()=> navigate('/approved')}
           >
             View
           </CustomButton>
