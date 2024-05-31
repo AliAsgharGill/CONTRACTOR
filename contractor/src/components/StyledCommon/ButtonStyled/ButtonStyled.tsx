@@ -59,7 +59,7 @@ const getButtonStyles = (props: CustomButtonProps) => {
         background: props.bgColor || "#F6D218",
         color: props.textColor || "black",
         border: props.borderColor || "none",
-        hoverBgColor: props.hoverBgColor || "#DDB114",
+        hoverBgColor: props.hoverBgColor || "#ddb114",
         hoverTextColor: props.hoverTextColor || "black",
         hoverBorderColor: props.hoverBorderColor || "none",
         ...defaultStyles,

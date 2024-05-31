@@ -6,7 +6,6 @@ export const StyledSelected = styled(AntdSelect)`
   border-radius: 4px;
   height: 3rem;
 `;
-
 export const StyledRadioGroup = styled(AntdRadio.Group)`
   display: flex;
   flex-direction: column;
@@ -34,7 +33,6 @@ export const SolidHR = styled.hr`
   margin: 20px 0;
   color: #606060;
 `;
-
 
 export const DashedHR = styled.hr`
   border: none;
