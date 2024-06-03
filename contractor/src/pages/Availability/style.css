@@ -1,0 +1,25 @@
+.slider-container {
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .custom-slider .ant-slider-track {
+    background-color: #0a5f59; /* Change track color */
+    height: 10px; /* Increase height */
+  }
+  
+  .custom-slider .ant-slider-handle {
+    background-color: #0a5f59; /* Change handle color */
+    border: none; /* Remove border if needed */
+    width: 20px; /* Increase handle width */
+    height: 20px; /* Increase handle height */
+    margin-top: -5px; /* Center the handle vertically */
+  }
+  
+  .custom-slider .ant-slider-rail {
+    height: 10px; /* Increase rail height */
+  }
+  
+  .custom-slider .ant-slider-mark-text {
+    color: #0a5f59; /* Change mark text color */
+  }
+  

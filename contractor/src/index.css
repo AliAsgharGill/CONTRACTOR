@@ -13,3 +13,43 @@
 .active {
   color: #222831;
 }
+
+.slider-container {
+  width: 300px; /* Adjust width as needed */
+}
+
+.custom-slider .ant-slider-track {
+  background-color: #0a5f59; /* Change track color */
+  height: 10px; /* Increase height */
+}
+
+.custom-slider .ant-slider-handle {
+  background: linear-gradient(
+    135deg,
+    #6dd5ed,
+    #2193b0
+  ); /* Gradient background */
+  border: none; /* Remove border if needed */
+  width: 20px; /* Increase handle width */
+  height: 20px; /* Increase handle height */
+  border-radius: 50%; /* Make the handle circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+  margin-top: -5px; /* Center the handle vertically */
+  transition: background 0.3s; /* Smooth transition for background color */
+}
+
+.custom-slider .ant-slider-handle:hover {
+  background: linear-gradient(
+    135deg,
+    #90ee90,
+    #32cd32
+  ); /* Light green gradient on hover */
+}
+
+.custom-slider .ant-slider-rail {
+  height: 10px; /* Increase rail height */
+}
+
+.custom-slider .ant-slider-mark-text {
+  color: #0a5f59; /* Change mark text color */
+}

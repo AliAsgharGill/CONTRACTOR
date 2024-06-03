@@ -13,7 +13,8 @@ export const NavbarDiv = styled.div`
   left: 0;
   z-index: 1;
   font-size: "20rem";
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 20px 0px #0000000F;
+
 `;
 
 export const ImageDiv = styled.div`

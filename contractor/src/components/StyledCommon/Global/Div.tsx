@@ -20,6 +20,7 @@ interface DivProps {
   boxShadow?: string;
   overflow?: string;
   children?: ReactNode;
+  onClick?: (ev: MouseEvent) => void;
 }
 
 const StyledDiv = styled.div<DivProps>`
@@ -61,6 +62,7 @@ const Div: React.FC<DivProps> = ({
   boxShadow,
   overflow,
   children,
+  onClick,
 }) => {
   return (
     <StyledDiv
@@ -81,6 +83,7 @@ const Div: React.FC<DivProps> = ({
       color={color}
       boxShadow={boxShadow}
       overflow={overflow}
+      onClick={onClick}
     >
       {children}
     </StyledDiv>
