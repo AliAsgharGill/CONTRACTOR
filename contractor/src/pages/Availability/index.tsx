@@ -6,11 +6,13 @@ import { SolidHR } from "../../components/Material/style";
 import WeekdayAndDatePicker from "../../components/StyledCommon/Global/WeekdayAndDatePicker";
 import { BiFilter } from "react-icons/bi";
 import { Slider } from "antd";
-import Img from "../../components/StyledCommon/Global/Img";
 import CustomInput from "../../components/StyledCommon/CustomInput";
 import CustomButton from "../../components/StyledCommon/ButtonStyled/ButtonStyled";
+import { useNavigate } from "react-router-dom";
 
 const Availability = () => {
+  const navigate = useNavigate();
+
   const marks = {
     0: "Empty",
     50: "Half",
@@ -205,6 +207,7 @@ const Availability = () => {
                         fontWeight="bold"
                         margin="0 0 0 1rem"
                         padding="1rem 5rem"
+                        onClick={() => navigate("/authorization")}
                       >
                         Book
                       </CustomButton>
