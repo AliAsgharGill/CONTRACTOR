@@ -29,14 +29,16 @@ export const StyledRadioButton = styled(AntdRadio)`
 
 export const SolidHR = styled.hr`
   border: none;
-  border-top: 2px solid #606060;
-  margin: 20px 0;
-  color: #606060;
+  border-top: 2px solid #D1CFCB;
+  /* margin: 20px 0; */
+  width: 100%;
+  color: #D1CFCB  ;
 `;
 
 export const DashedHR = styled.hr`
   border: none;
   border-top: 2px dashed #606060;
-  margin: 20px 0;
+  /* margin: 20px 0; */
+  width: 100%;
   color: #606060;
 `;
