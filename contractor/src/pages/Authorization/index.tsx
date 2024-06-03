@@ -85,7 +85,7 @@ const Authorization = () => {
               <Title lineHeight="1.8">
                 {" "}
                 <span style={{ fontWeight: 600 }}> Receiving site: </span>{" "}
-                ackman Corporation Inc.
+                Jackman Corporation Inc.
               </Title>
             </Div>
           </Div>

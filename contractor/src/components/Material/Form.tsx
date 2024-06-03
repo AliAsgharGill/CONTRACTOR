@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Select as AntdSelect } from "antd";
 import {
   DashedHR,
