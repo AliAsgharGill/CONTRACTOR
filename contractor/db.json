@@ -232,6 +232,22 @@
       "location": "Hyderabad, Pakistan",
       "role": "Software Engineer",
       "photo": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "Dignissimos iusto delectus ut laboriosam tenetur laudantium.",
+      "fullName": "Claudie Batz-Bradtke",
+      "email": "your.email+fakedata80408@gmail.com",
+      "contactPhone": "186-693-1589",
+      "location": "Officia dolorem nam occaecati aliquam veniam rem.",
+      "role": "Quia occaecati earum accusamus facere dolorem."
+    },
+    {
+      "id": "Fuga perspiciatis iusto facere error id doloremque provident.",
+      "fullName": "Johnathon Schaden",
+      "email": "your.email+fakedata37374@gmail.com",
+      "contactPhone": "114-108-7604",
+      "location": "Soluta magni ratione minus asperiores deleniti amet.",
+      "role": "Suscipit quos voluptatum sit ipsum."
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import CustomButton from "../../components/StyledCommon/ButtonStyled/ButtonStyled";
 import { MainDivAside } from "../../components/StyledCommon/Global";
 import Div from "../../components/StyledCommon/Global/Div";
@@ -5,6 +6,8 @@ import Title from "../../components/StyledCommon/Global/Title";
 import MembersData from "./MembersData";
 
 const TeamMembers = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <MainDivAside>
@@ -25,6 +28,7 @@ const TeamMembers = () => {
             fontSize="1.4rem"
             margin="2rem 0 0 0"
             padding="1rem 4rem"
+            onClick={() => navigate("/AddTeamMember")}
           >
             Add Member{" "}
           </CustomButton>
