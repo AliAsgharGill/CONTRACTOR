@@ -153,7 +153,6 @@ const TruckingInformation = () => {
               fontSize="1.2rem"
               margin="2rem 0 0 2rem"
               padding="1rem 2rem"
-            //   htmlType="submit"
               type="submit"
             >
               Save and Send to the Site Filed

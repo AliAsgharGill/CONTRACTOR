@@ -141,5 +141,97 @@
         "csrAcceptance": "NY"
       }
     }
+  ],
+  "team": [
+    {
+      "id": "2a34",
+      "fullName": "Sara Khan",
+      "email": "sara.khan@example.com",
+      "contactPhone": "02033712211",
+      "location": "Sindh, Pakistan",
+      "role": "Project Manager",
+      "photo": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "3b56",
+      "fullName": "Ahmed Raza",
+      "email": "ahmed.raza@example.com",
+      "contactPhone": "02033712212",
+      "location": "Karachi, Pakistan",
+      "role": "Lead Developer",
+      "photo": "https://images.pexels.com/photos/1043476/pexels-photo-1043476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "4c78",
+      "fullName": "Fatima Ali",
+      "email": "fatima.ali@example.com",
+      "contactPhone": "02033712213",
+      "location": "Lahore, Pakistan",
+      "role": "UI/UX Designer",
+      "photo": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "5d90",
+      "fullName": "Hassan Mehmood",
+      "email": "hassan.mehmood@example.com",
+      "contactPhone": "02033712214",
+      "location": "Islamabad, Pakistan",
+      "role": "Backend Developer",
+      "photo": "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "6e12",
+      "fullName": "Ayesha Malik",
+      "email": "ayesha.malik@example.com",
+      "contactPhone": "02033712215",
+      "location": "Multan, Pakistan",
+      "role": "Frontend Developer",
+      "photo": "https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "7f34",
+      "fullName": "Bilal Ahmed",
+      "email": "bilal.ahmed@example.com",
+      "contactPhone": "02033712216",
+      "location": "Rawalpindi, Pakistan",
+      "role": "DevOps Engineer",
+      "photo": "https://images.pexels.com/photos/1484798/pexels-photo-1484798.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "8g56",
+      "fullName": "Zara Fatima",
+      "email": "zara.fatima@example.com",
+      "contactPhone": "02033712217",
+      "location": "Quetta, Pakistan",
+      "role": "QA Engineer",
+      "photo": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "9h78",
+      "fullName": "Usman Tariq",
+      "email": "usman.tariq@example.com",
+      "contactPhone": "02033712218",
+      "location": "Faisalabad, Pakistan",
+      "role": "Database Administrator",
+      "photo": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "10i90",
+      "fullName": "Nida Abbas",
+      "email": "nida.abbas@example.com",
+      "contactPhone": "02033712219",
+      "location": "Peshawar, Pakistan",
+      "role": "Product Manager",
+      "photo": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "id": "11j12",
+      "fullName": "Muneeb Shah",
+      "email": "muneeb.shah@example.com",
+      "contactPhone": "02033712220",
+      "location": "Hyderabad, Pakistan",
+      "role": "Software Engineer",
+      "photo": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    }
   ]
 }
