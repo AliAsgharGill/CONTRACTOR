@@ -109,7 +109,7 @@ const Approved = () => {
             <Div display="flex" padding="0 0 1rem  1.5rem">
               <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
-                Contaminated Site Regulations for the material type: s{" "}
+                Contaminated Site Regulations for the material type: {" "}
               </Title>
               <Title fontSize="1.2rem"> &nbsp; CL+ / 36,15 Metric Tones </Title>
             </Div>

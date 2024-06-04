@@ -241,5 +241,324 @@
       "location": "Londan",
       "role": "CEO"
     }
+  ],
+  "constructionData": [
+    {
+      "id": 1,
+      "siteName": "Jackman Corporation Inc.",
+      "truck": "10",
+      "weight": "134t",
+      "totalMoney": "$16000.00"
+    },
+    {
+      "id": 2,
+      "siteName": "Anderson Construction Ltd.",
+      "truck": "8",
+      "weight": "112t",
+      "totalMoney": "$13000.00"
+    },
+    {
+      "id": 3,
+      "siteName": "Hamilton Builders",
+      "truck": "15",
+      "weight": "200t",
+      "totalMoney": "$25000.00"
+    },
+    {
+      "id": 4,
+      "siteName": "Greenfield Developments",
+      "truck": "12",
+      "weight": "150t",
+      "totalMoney": "$18000.00"
+    },
+    {
+      "id": 5,
+      "siteName": "Premier Infrastructure",
+      "truck": "5",
+      "weight": "70t",
+      "totalMoney": "$9000.00"
+    },
+    {
+      "id": 6,
+      "siteName": "Sunrise Construction",
+      "truck": "7",
+      "weight": "90t",
+      "totalMoney": "$12000.00"
+    },
+    {
+      "id": 7,
+      "siteName": "Blue Sky Builders",
+      "truck": "9",
+      "weight": "115t",
+      "totalMoney": "$14500.00"
+    },
+    {
+      "id": 8,
+      "siteName": "Red Brick Contractors",
+      "truck": "6",
+      "weight": "80t",
+      "totalMoney": "$10000.00"
+    },
+    {
+      "id": 9,
+      "siteName": "Mountain View Construction",
+      "truck": "11",
+      "weight": "130t",
+      "totalMoney": "$16000.00"
+    },
+    {
+      "id": 10,
+      "siteName": "Riverbend Builders",
+      "truck": "4",
+      "weight": "60t",
+      "totalMoney": "$7500.00"
+    },
+    {
+      "id": 11,
+      "siteName": "Evergreen Construction Co.",
+      "truck": "14",
+      "weight": "180t",
+      "totalMoney": "$22000.00"
+    },
+    {
+      "id": 12,
+      "siteName": "Golden Gate Constructors",
+      "truck": "13",
+      "weight": "160t",
+      "totalMoney": "$20000.00"
+    },
+    {
+      "id": 13,
+      "siteName": "Silver Line Builders",
+      "truck": "3",
+      "weight": "50t",
+      "totalMoney": "$6000.00"
+    },
+    {
+      "id": 14,
+      "siteName": "Urban Edge Construction",
+      "truck": "8",
+      "weight": "105t",
+      "totalMoney": "$13500.00"
+    },
+    {
+      "id": 15,
+      "siteName": "Skyline Construction Ltd.",
+      "truck": "7",
+      "weight": "95t",
+      "totalMoney": "$12000.00"
+    },
+    {
+      "id": 16,
+      "siteName": "West Coast Builders",
+      "truck": "10",
+      "weight": "140t",
+      "totalMoney": "$17000.00"
+    },
+    {
+      "id": 17,
+      "siteName": "North Star Constructors",
+      "truck": "9",
+      "weight": "125t",
+      "totalMoney": "$15000.00"
+    },
+    {
+      "id": 18,
+      "siteName": "East Side Contractors",
+      "truck": "6",
+      "weight": "85t",
+      "totalMoney": "$11000.00"
+    },
+    {
+      "id": 19,
+      "siteName": "South Gate Construction",
+      "truck": "5",
+      "weight": "75t",
+      "totalMoney": "$9500.00"
+    },
+    {
+      "id": 20,
+      "siteName": "Central City Builders",
+      "truck": "12",
+      "weight": "155t",
+      "totalMoney": "$19000.00"
+    },
+    {
+      "id": 21,
+      "siteName": "Pine Valley Construction",
+      "truck": "8",
+      "weight": "110t",
+      "totalMoney": "$13500.00"
+    },
+    {
+      "id": 22,
+      "siteName": "Lakeside Construction Co.",
+      "truck": "11",
+      "weight": "135t",
+      "totalMoney": "$16500.00"
+    },
+    {
+      "id": 23,
+      "siteName": "Highland Builders",
+      "truck": "14",
+      "weight": "175t",
+      "totalMoney": "$21500.00"
+    },
+    {
+      "id": 24,
+      "siteName": "Desert Sands Constructors",
+      "truck": "4",
+      "weight": "65t",
+      "totalMoney": "$8000.00"
+    },
+    {
+      "id": 25,
+      "siteName": "Pacific Coast Builders",
+      "truck": "13",
+      "weight": "150t",
+      "totalMoney": "$18500.00"
+    }
+  ],
+  "invoiceData": [
+    {
+      "id": 1,
+      "invoiceNumber": "#368569",
+      "fillSite": "Jackman Corporation Inc.",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 18, 2022"
+    },
+    {
+      "id": 2,
+      "invoiceNumber": "#368570",
+      "fillSite": "Anderson Construction Ltd.",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 1, 2022"
+    },
+    {
+      "id": 3,
+      "invoiceNumber": "#368571",
+      "fillSite": "Hamilton Builders",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 25, 2022"
+    },
+    {
+      "id": 4,
+      "invoiceNumber": "#368572",
+      "fillSite": "Greenfield Developments",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 20, 2022"
+    },
+    {
+      "id": 5,
+      "invoiceNumber": "#368573",
+      "fillSite": "Premier Infrastructure",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 10, 2022"
+    },
+    {
+      "id": 6,
+      "invoiceNumber": "#368574",
+      "fillSite": "Sunrise Construction",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 15, 2022"
+    },
+    {
+      "id": 7,
+      "invoiceNumber": "#368575",
+      "fillSite": "Blue Sky Builders",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 5, 2022"
+    },
+    {
+      "id": 8,
+      "invoiceNumber": "#368576",
+      "fillSite": "Red Brick Contractors",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 30, 2022"
+    },
+    {
+      "id": 9,
+      "invoiceNumber": "#368577",
+      "fillSite": "Mountain View Construction",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 15, 2022"
+    },
+    {
+      "id": 10,
+      "invoiceNumber": "#368578",
+      "fillSite": "Riverbend Builders",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 28, 2022"
+    },
+    {
+      "id": 11,
+      "invoiceNumber": "#368579",
+      "fillSite": "Evergreen Construction Co.",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 8, 2022"
+    },
+    {
+      "id": 12,
+      "invoiceNumber": "#368580",
+      "fillSite": "Golden Gate Constructors",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 23, 2022"
+    },
+    {
+      "id": 13,
+      "invoiceNumber": "#368581",
+      "fillSite": "Silver Line Builders",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 12, 2022"
+    },
+    {
+      "id": 14,
+      "invoiceNumber": "#368582",
+      "fillSite": "Urban Edge Construction",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 17, 2022"
+    },
+    {
+      "id": 15,
+      "invoiceNumber": "#368583",
+      "fillSite": "Skyline Construction Ltd.",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 3, 2022"
+    },
+    {
+      "id": 16,
+      "invoiceNumber": "#368584",
+      "fillSite": "West Coast Builders",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 22, 2022"
+    },
+    {
+      "id": 17,
+      "invoiceNumber": "#368585",
+      "fillSite": "North Star Constructors",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 7, 2022"
+    },
+    {
+      "id": 18,
+      "invoiceNumber": "#368586",
+      "fillSite": "East Side Contractors",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 27, 2022"
+    },
+    {
+      "id": 19,
+      "invoiceNumber": "#368587",
+      "fillSite": "South Gate Construction",
+      "invoice": "Awaiting Payment",
+      "paymentDueDate": "Dec 13, 2022"
+    },
+    {
+      "id": 20,
+      "invoiceNumber": "#368588",
+      "fillSite": "Central City Builders",
+      "invoice": "Paid",
+      "paymentDueDate": "Nov 21, 2022"
+    }
   ]
 }

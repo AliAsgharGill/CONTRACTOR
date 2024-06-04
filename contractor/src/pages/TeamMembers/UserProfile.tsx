@@ -44,7 +44,7 @@ const UserProfile = () => {
     return <div>Loading...</div>;
   }
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: TeamMember) => {
     try {
       await axios.patch(`http://localhost:3000/team/${id}`, values);
       message.success("Member saved successfully!");
@@ -181,16 +181,36 @@ const UserProfile = () => {
                 </Form.Item>
               </Div>
             </Div>
-            <Div margin="2rem 0 0 6rem">
+            <Div
+              margin="2rem 0 0 6rem"
+              display="flex"
+              width="35rem"
+              justifyContent="space-between"
+            >
               <Form.Item>
                 <CustomButton
                   type="submit"
                   variant="primary"
                   fontWeight="bold"
-                  fontSize="1.2rem"
+                  fontSize="1rem"
                   padding="1rem 4rem"
                 >
-                  Save
+                  Save Changes
+                </CustomButton>
+              </Form.Item>
+
+              <Form.Item>
+                <CustomButton
+                  type="button"
+                  variant="outlined"
+                  fontWeight="bold"
+                  fontSize="1.2rem"
+                  padding="1rem 4rem"
+                  borderColor="none"
+                  hoverBgColor="none"
+                  hoverTextColor="none"
+                >
+                  <u>Change Password</u>
                 </CustomButton>
               </Form.Item>
             </Div>

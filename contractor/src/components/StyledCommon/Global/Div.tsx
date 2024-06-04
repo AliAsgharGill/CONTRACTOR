@@ -28,6 +28,8 @@ interface DivProps {
   overflow?: string;
   children?: ReactNode;
   onClick?: (ev: MouseEvent) => void;
+  className?: string;
+  flex?: string;
 }
 
 const StyledDiv = styled.div<DivProps>`
@@ -55,6 +57,8 @@ const StyledDiv = styled.div<DivProps>`
   grid-template-rows: ${(props) => props.gridRows || "none"};
   grid-template-areas: ${(props) => props.gridAreas || "none"};
   grid-template: ${(props) => props.gridTemplate || "none"};
+  classname: ${(props) => props.className};
+  flex: ${(props) => props.flex};
 `;
 
 const Div: React.FC<DivProps> = ({
@@ -84,6 +88,8 @@ const Div: React.FC<DivProps> = ({
   gridRows,
   gridAreas,
   gridTemplate,
+  className,
+  flex,
 }) => {
   return (
     <StyledDiv
@@ -112,6 +118,8 @@ const Div: React.FC<DivProps> = ({
       boxShadow={boxShadow}
       overflow={overflow}
       onClick={onClick}
+      className={className}
+      flex={flex}
     >
       {children}
     </StyledDiv>

@@ -13,6 +13,7 @@ interface TitleProps {
   margin?: string;
   padding?: string;
   width?: string;
+  flex?: string;
   children: ReactNode;
 }
 
@@ -24,10 +25,11 @@ const StyledTitle = styled.h1<TitleProps>`
   color: ${(props) => props.color};
   line-height: ${(props) => props.lineHeight};
   letter-spacing: ${(props) => props.letterSpacing};
-  text-align: ${(props) => props.textAlign};
+  text-align: ${(props) => props.textAlign || "left"};
   margin: ${(props) => props.margin};
   padding: ${(props) => props.padding};
   width: ${(props) => props.padding};
+  flex: ${(props) => props.flex};
 `;
 
 const Title: React.FC<TitleProps> = ({
@@ -43,6 +45,7 @@ const Title: React.FC<TitleProps> = ({
   padding,
   children,
   width,
+  flex,
 }) => {
   return (
     <StyledTitle
@@ -57,6 +60,7 @@ const Title: React.FC<TitleProps> = ({
       margin={margin}
       padding={padding}
       width={width}
+      flex={flex}
     >
       {children}
     </StyledTitle>

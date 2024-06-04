@@ -78,6 +78,7 @@ const MembersData = () => {
           key={item.id}
           display="flex"
           justifyContent="space-between"
+          gap="1rem" 
           alignItems="center"
           backgroundColor="white"
           width="92.5%"
@@ -85,13 +86,14 @@ const MembersData = () => {
           height="5rem"
           margin="1rem 0 0 5rem"
           borderRadius="0.4rem"
+          onClick={() => showUserDetails(item.id)}
         >
-          <Div onClick={() => showUserDetails(item.id)}>
+          <Div>
             <Title fontWeight="bold" textAlign="start">
               {item.fullName}
             </Title>
           </Div>
-          <Title color="#0A5F59" textAlign="start">
+          <Title color="#0A5F59" textAlign="left">
             {item.email}
           </Title>
           <Title color="#7B7B7B" textAlign="start" fontWeight="bold">

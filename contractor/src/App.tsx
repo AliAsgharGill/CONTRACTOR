@@ -21,6 +21,7 @@ import Availability from "./pages/Availability";
 import Authorization from "./pages/Authorization";
 import AddTeamMember from "./pages/TeamMembers/AddTeamMember";
 import UserProfile from "./pages/TeamMembers/UserProfile";
+import WorkAccountInfo from "./pages/TeamMembers/WorkAccountInfo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
       <Route path="/authorization" element={<Authorization />} />
       <Route path="/AddTeamMember" element={<AddTeamMember />} />
       <Route path="/team/:id" element={<UserProfile />} />
+      <Route path="/workAccountInfo" element={<WorkAccountInfo />} />
 
       {/* No Route Found */}
       <Route path="*" element={<PageNotFound />} />
