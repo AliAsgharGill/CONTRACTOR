@@ -145,9 +145,9 @@
   "team": [
     {
       "id": "2a34",
-      "fullName": "Sara Khan",
+      "fullName": "Sara Khan ",
       "email": "sara.khan@example.com",
-      "contactPhone": "02033712211",
+      "contactPhone": "0092381038102",
       "location": "Sindh, Pakistan",
       "role": "Project Manager",
       "photo": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -163,11 +163,11 @@
     },
     {
       "id": "4c78",
-      "fullName": "Fatima Ali",
-      "email": "fatima.ali@example.com",
-      "contactPhone": "02033712213",
-      "location": "Lahore, Pakistan",
-      "role": "UI/UX Designer",
+      "fullName": "Fatima Ali ",
+      "email": "fatima.ali@example.com ",
+      "contactPhone": "02033712213 ",
+      "location": "Lahore, Pakistan ",
+      "role": "UI/UX Designer ",
       "photo": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     },
     {
