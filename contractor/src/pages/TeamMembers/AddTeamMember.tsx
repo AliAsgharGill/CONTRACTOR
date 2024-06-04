@@ -3,7 +3,7 @@ import { MainDivAside } from "../../components/StyledCommon/Global";
 import Title from "../../components/StyledCommon/Global/Title";
 import Div from "../../components/StyledCommon/Global/Div";
 import AddMemberForm from "./AddMemberForm";
-
+  
 const AddTeamMember = () => {
   return (
     <>
@@ -20,7 +20,7 @@ const AddTeamMember = () => {
         </Div>
         <Div>
           <AddMemberForm />
-        </Div>
+        </Div>                      
       </MainDivAside>
     </>
   );

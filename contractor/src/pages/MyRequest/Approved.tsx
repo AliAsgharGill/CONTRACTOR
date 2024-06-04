@@ -16,7 +16,7 @@ const Approved = () => {
             fill="#0a5f59"
             onClick={() => window.history.back()}
           />
-          <Title fontSize="2em" fontWeight="600" margin="0 0 0 1rem">
+          <Title fontSize="2em" fontWeight="600" margin="0 0 0 0">
             Your Request Is Approved
           </Title>
         </Div>
@@ -34,35 +34,35 @@ const Approved = () => {
           >
             <Title
               fontSize="2rem"
-              margin="0.5rem 0 1.1rem 1.5rem"
+              margin="0.5rem 1rem"
               width="100"
               fontWeight="900"
             >
               Request details:
             </Title>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0rem 0 0  1.5rem">
+              <Title fontWeight="500" fontSize="1.4rem">
                 {" "}
                 Request Submitted on:
               </Title>
-              <Title fontSize="1.6rem"> &nbsp; Sep 22, 2022</Title>
+              <Title fontSize="1.4rem"> &nbsp; Sep 22, 2022</Title>
             </Div>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0 0 0  1.5rem">
+              <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
                 Request Approved on:
               </Title>
-              <Title fontSize="1.6rem"> &nbsp; Sep 26, 2022</Title>
+              <Title fontSize="1.2rem"> &nbsp; Sep 26, 2022</Title>
             </Div>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0 0 1rem  1.5rem">
+              <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
                 Type of material:
               </Title>
-              <Title fontSize="1.6rem"> &nbsp; CL+</Title>
+              <Title fontSize="1.2rem"> &nbsp; CL+</Title>
             </Div>
           </Div>
         </Div>
@@ -80,38 +80,38 @@ const Approved = () => {
           >
             <Title
               fontSize="2rem"
-              margin="0.5rem 0 1.1rem 1.5rem"
+              margin="1rem 0 1rem 1rem"
               width="100"
               fontWeight="900"
             >
               List of all material needed:
             </Title>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0 0 0rem 1.5rem">
+              <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
                 Material / material amount:
               </Title>
-              <Title fontSize="1.6rem"> &nbsp; CL+ / 36,15 Metric Tones </Title>
+              <Title fontSize="1.2rem"> &nbsp; CL+ / 36,15 Metric Tones </Title>
             </Div>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0 0 0  1.5rem">
+              <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
                 Environmental / geotechnical analytical data:
               </Title>
-              <Title fontSize="1.6rem" padding="0 0 0 1rem">
+              <Title fontSize="1.2rem" padding="0 0 0 0">
                 {" "}
                 <Img src={"src/assets/images/pdfImage.png"} />{" "}
               </Title>
             </Div>
             <SolidHR />
-            <Div display="flex" padding="1rem 0 1rem  1.5rem">
-              <Title fontWeight="500" fontSize="1.6rem">
+            <Div display="flex" padding="0 0 1rem  1.5rem">
+              <Title fontWeight="500" fontSize="1.2rem">
                 {" "}
                 Contaminated Site Regulations for the material type: s{" "}
               </Title>
-              <Title fontSize="1.6rem"> &nbsp; CL+ / 36,15 Metric Tones </Title>
+              <Title fontSize="1.2rem"> &nbsp; CL+ / 36,15 Metric Tones </Title>
             </Div>
           </Div>
         </Div>

@@ -3,6 +3,7 @@ import Div from "../../components/StyledCommon/Global/Div";
 import CustomButton from "../../components/StyledCommon/ButtonStyled/ButtonStyled";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface TeamMember {
   id: string;
@@ -16,7 +17,7 @@ interface TeamMember {
 
 const MembersData = () => {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   const request = async () => {
     try {
       const response = await axios.get("http://localhost:3000/team");
@@ -40,6 +41,10 @@ const MembersData = () => {
       .catch((error) => {
         console.log("Error:", error);
       });
+  };
+
+  const showUserDetails = (id: string) => {
+    navigate(`/team/${id}`);
   };
 
   return (
@@ -81,9 +86,11 @@ const MembersData = () => {
           margin="1rem 0 0 5rem"
           borderRadius="0.4rem"
         >
-          <Title fontWeight="bold" textAlign="start">
-            {item.fullName}
-          </Title>
+          <Div onClick={() => showUserDetails(item.id)}>
+            <Title fontWeight="bold" textAlign="start">
+              {item.fullName}
+            </Title>
+          </Div>
           <Title color="#0A5F59" textAlign="start">
             {item.email}
           </Title>

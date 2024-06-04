@@ -28,7 +28,7 @@ const MaterialContent = () => {
         <Div width="100%" display="flex" justifyContent="space-between">
           <Title
             fontSize="2rem"
-            margin="0.5rem 0 1.1rem 1.5rem"
+            margin="0.5rem 0 0rem 1.5rem"
             width="100"
             fontWeight="900"
           >
@@ -37,7 +37,7 @@ const MaterialContent = () => {
           <CustomButton
             variant="primary"
             margin="1rem 1rem "
-            padding="0 3rem"
+            padding="1rem 4rem"
             fontWeight="bold"
             onClick={() => navigate("/availability")}
           >
@@ -45,37 +45,37 @@ const MaterialContent = () => {
           </CustomButton>
         </Div>
         <SolidHR />
-        <Div display="flex" padding="1rem 0 1rem  1.5rem">
+        <Div display="flex" padding="0rem 0 0rem  1.5rem">
           <Title fontWeight="500" fontSize="1.6rem">
             Operation hours:
           </Title>
           <Title fontSize="1.6rem"> &nbsp;08AM - 04:00PM</Title>
         </Div>
         <SolidHR />
-        <Div display="flex" padding="1rem 0 1rem  1.5rem">
+        <Div display="flex" padding="0rem 0 0rem  1.5rem">
           <Title fontWeight="500" fontSize="1.6rem">
             Address:
           </Title>
-          <Title fontSize="1.6rem" padding="0 0 0 1rem">
+          <Title fontSize="1.6rem" padding="0rem 0 0rem  1.5rem">
             12671 New Halls Ferry Rd; Florissant, Mississippi, 63033 US
           </Title>
         </Div>
         <SolidHR />
-        <Div display="flex" padding="1rem 0 1rem  1.5rem">
+        <Div display="flex" padding="0rem 0 0rem  1.5rem">
           <Title fontWeight="500" fontSize="1.6rem">
             Max allowable trucks per day:
           </Title>
           <Title fontSize="1.6rem"> &nbsp; 4</Title>
         </Div>
         <SolidHR />
-        <Div display="flex" padding="1rem 0 1rem  1.5rem">
+        <Div display="flex" padding="0rem 0 0rem  1.5rem">
           <Title fontWeight="500" fontSize="1.6rem">
             Max allowable loads per day:
           </Title>
           <Title fontSize="1.6rem"> &nbsp; 12</Title>
         </Div>
         <SolidHR />
-        <Div display="flex" padding="1rem 0 1rem  1.5rem">
+        <Div display="flex" padding="0rem 0 1rem  1.5rem">
           <Title fontWeight="500" fontSize="1.6rem">
             CSR acceptance:
           </Title>
