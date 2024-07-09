@@ -20,6 +20,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
+import { Input } from "../ui/input";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { toast } from "../ui/use-toast";
+import { z } from "zod";
+import { SearchValues } from "@/types/searchType";
+import { searchSchema } from "@/app/schemas/serach-schema";
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
@@ -44,17 +51,37 @@ export default function Nav() {
   };
 
   useEffect(() => {
-    const handleStorageChange = () => {
-      const token = localStorage.getItem("access_token");
-      setIsLoggedIn(!!token);
-    };
+    const token = localStorage.getItem("access_token");
+    setIsLoggedIn(!!token);
+  }, [isLoggedIn]);
 
-    window.addEventListener("storage", handleStorageChange);
+  const onSubmit = async (data: z.infer<typeof searchSchema>) => {
+    console.log("Form submitted:", data);
+    try {
+      const response = await axios.post(
+        // Todo: need to change link
+        "https://4cc4-110-39-21-146.ngrok-free.app/register/login",
+        data
+      );
+      console.log("Login successful Data:", response.data);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed get book",
+        variant: "destructive",
+      });
+    }
+  };
 
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, []);
+  const form = useForm<SearchValues>({
+    // validation mode
+    mode: "onTouched",
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  const { register, control, handleSubmit, formState } = form;
 
   return (
     <header className="bg-white">
@@ -69,7 +96,7 @@ export default function Nav() {
               height={42}
               width={200}
               alt=""
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA0rBIlDbRRXR5efoXBU57WPSTaqyyA7z_NA&s"
+              src="https://i.pinimg.com/736x/a7/91/0c/a7910cf32f182c9ea34022abb7839980.jpg"
               className="h-8 w-auto"
             />
           </Link>
@@ -84,7 +111,7 @@ export default function Nav() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </Button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 items-center">
           <Link
             href="/"
             className="text-sm font-semibold leading-6 text-gray-900"
@@ -97,12 +124,24 @@ export default function Nav() {
           >
             Books
           </Link>
-          <Link
-            href="#"
-            className="text-sm font-semibold leading-6 text-gray-900"
+          <form
+            noValidate
+            //   to submit the form we use handleSubmit method assigned to the onSubmit event and passed in our submit function
+            // reason to use handleSubmit is it can accept another argument onError
+            onSubmit={handleSubmit(onSubmit)}
+            className=" bg-white w-full  shadow-md rounded "
           >
-            Company
-          </Link>
+            <div className="flex justify-start  text-start flex-col">
+              <Input
+                prefix="search"
+                type="search"
+                id="search"
+                placeholder="Search book..."
+                className="border border-black rounded p-2"
+                {...register("search")}
+              />
+            </div>
+          </form>
         </PopoverGroup>
         {isLoggedIn ? (
           <div className="hidden lg:flex lg:flex-1 lg:justify-end space-x-4 ">

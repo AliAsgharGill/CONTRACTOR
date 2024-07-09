@@ -144,17 +144,17 @@ const LoginForm = () => {
             disabled={!isDirty || !isDirty}
             className={`border ${
               isValid ? "bg-black" : "bg-gray-300"
-            } font-bold text-white w-full my-2 p-2 rounded`}
+            } font-bold text-white w-full my-4 p-2 rounded`}
           >
             {!isValid ? (
               "Please Fill Form"
             ) : isSubmitting ? (
-              <div>
+              <div className="flex justify-center items-center">
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Loading...
+                Loging In...
               </div>
             ) : (
-              "Submit"
+              "Login"
             )}
           </button>
         </form>
