@@ -9,11 +9,10 @@ import { toast } from "@/components/ui/use-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { SignupFormValues } from "@/types/signupFormValues";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { SignupApiResponse } from "@/types/SignupApiResponse";
+import { SignupApiResponse, SignupFormValues } from "@/types/SingupTypes";
 
 const SignupForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

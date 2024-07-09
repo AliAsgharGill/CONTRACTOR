@@ -7,15 +7,11 @@ import loginSchema from "@/app/schemas/loginin-schema";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
-
-type FormValues = {
-  email: string;
-  password: string;
-};
+import { LoginFormValues } from "@/types/SigninTypes";
 
 const ZodValidationForm = () => {
   const route = useRouter();
-  const form = useForm<FormValues>({
+  const form = useForm<LoginFormValues>({
     // validation mode
     mode: "onTouched",
     // static default values
@@ -35,11 +31,17 @@ const ZodValidationForm = () => {
     console.log("Form submitted:", data);
     try {
       const response = await axios.post(
-        "https://65784a9df08799dc8044d036.mockapi.io/CRUD",
+        "https://4cc4-110-39-21-146.ngrok-free.app/register/login",
         data
       );
-      console.log("Login successful:", response.data);
       // here we can handle the successful login response here (e.g., save the token, redirect to another page)
+      console.log("Login successful:", response.data);
+      toast({
+        title: "Success",
+        description: "Login successfully",
+      });
+      route.push("/sign-in");
+
       toast({
         title: "Success",
         description: "Logged in successfully",
