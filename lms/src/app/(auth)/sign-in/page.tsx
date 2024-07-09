@@ -8,8 +8,12 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "@/components/ui/use-toast";
 import { LoginFormValues } from "@/types/SigninTypes";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
 
-const ZodValidationForm = () => {
+const LoginForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const route = useRouter();
   const form = useForm<LoginFormValues>({
     // validation mode
@@ -28,6 +32,7 @@ const ZodValidationForm = () => {
   const { errors, isDirty, isValid } = formState;
 
   const onSubmit = async (data: z.infer<typeof loginSchema>) => {
+    setIsSubmitting(true);
     console.log("Form submitted:", data);
     try {
       const response = await axios.post(
@@ -35,18 +40,28 @@ const ZodValidationForm = () => {
         data
       );
       // here we can handle the successful login response here (e.g., save the token, redirect to another page)
-      console.log("Login successful:", response.data);
+      console.log("Login successful Data:", response.data);
+      // storing token in localstorage
+      localStorage.setItem("access_token", response.data.access_token);
+
       toast({
         title: "Success",
         description: "Login successfully",
       });
-      route.push("/sign-in");
+
+      // if role is admin
+      if (response.data.role === "admin") {
+        route.push("/dashboard");
+      }
+
+      route.push("/home");
 
       toast({
         title: "Success",
         description: "Logged in successfully",
       });
       route.push("/dashboard");
+      setIsSubmitting(false);
     } catch (error) {
       // console.error("Login failed:", error.response?.data || error.message);
       toast({
@@ -54,6 +69,7 @@ const ZodValidationForm = () => {
         description: "Failed to log in",
         variant: "destructive",
       });
+      setIsSubmitting(false);
     }
   };
 
@@ -130,7 +146,16 @@ const ZodValidationForm = () => {
               isValid ? "bg-black" : "bg-gray-300"
             } font-bold text-white w-full my-2 p-2 rounded`}
           >
-            {!isValid ? "Please Fill Form" : "Submit"}
+            {!isValid ? (
+              "Please Fill Form"
+            ) : isSubmitting ? (
+              <div>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Loading...
+              </div>
+            ) : (
+              "Submit"
+            )}
           </button>
         </form>
         <DevTool control={control} />
@@ -139,4 +164,4 @@ const ZodValidationForm = () => {
   );
 };
 
-export default ZodValidationForm;
+export default LoginForm;

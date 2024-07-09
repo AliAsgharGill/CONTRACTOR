@@ -57,7 +57,7 @@ const SignupForm = () => {
     } catch (error) {
       console.log("Error in signup for user", error);
       const axiosError = error as AxiosError<SignupApiResponse>;
-      let errorMessage = axiosError.response?.data.email;
+      let errorMessage = axiosError.response?.data.email[0];
       toast({
         title: "Error",
         description: "Failed to register user",
