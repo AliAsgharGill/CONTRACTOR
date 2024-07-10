@@ -43,7 +43,8 @@ const SignupForm = () => {
 
     try {
       const response = await axios.post<SignupApiResponse>(
-        "https://4cc4-110-39-21-146.ngrok-free.app/register/register-user",
+        // "https://4cc4-110-39-21-146.ngrok-free.app/register/register-user",
+        "http://192.168.0.247:8000/user/register",
         data
       );
       toast({
@@ -169,7 +170,9 @@ const SignupForm = () => {
             {!isValid ? (
               "Please Fill Form"
             ) : isSubmitting ? (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <div className="flex items-center justify-center" >
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Register
+              </div>
             ) : (
               "Register"
             )}

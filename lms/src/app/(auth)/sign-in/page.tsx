@@ -10,6 +10,7 @@ import { toast } from "@/components/ui/use-toast";
 import { LoginFormValues } from "@/types/SigninTypes";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,34 +37,38 @@ const LoginForm = () => {
     console.log("Form submitted:", data);
     try {
       const response = await axios.post(
-        "https://4cc4-110-39-21-146.ngrok-free.app/register/login",
+        // "https://4cc4-110-39-21-146.ngrok-free.app/register/login",
+        "http://192.168.0.247:8000/user/login",
         data
       );
-      // here we can handle the successful login response here (e.g., save the token, redirect to another page)
+      // Here we can handle the successful login response (e.g., save the token, redirect to another page)
       console.log("Login successful Data:", response.data);
-      // storing token in localstorage
-      localStorage.setItem("access_token", response.data.access_token);
+
+      // Storing token in cookies
+      Cookies.set("access_token", response.data.access_token, { expires: 7 });
 
       toast({
         title: "Success",
         description: "Login successfully",
       });
 
-      // if role is admin
-      if (response.data.role === "admin") {
-        route.push("/dashboard");
-      }
+      route.push("/");
 
-      route.push("/home");
+      // Redirect based on role
+      // if (response.data.role === "admin") {
+      //   route.push("/dashboard");
+      // } else {
+      //   route.push("/");
+      // }
 
       toast({
         title: "Success",
         description: "Logged in successfully",
       });
+
       route.push("/dashboard");
       setIsSubmitting(false);
     } catch (error) {
-      // console.error("Login failed:", error.response?.data || error.message);
       toast({
         title: "Error",
         description: "Failed to log in",

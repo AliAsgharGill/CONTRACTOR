@@ -192,7 +192,7 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold mb-6">Available Books</h1>
 
         <div className="container mx-auto p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {books.length > 0 ? (
               books.map((book: any) => (
                 <div
@@ -216,7 +216,7 @@ const Dashboard = () => {
                         <span className="text-red-500">Not Available</span>
                       )}
                     </p>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-5">
                       <button onClick={() => handleEdit(book)}>
                         <Edit3 className="text-blue-500 w-5 h-5" />
                       </button>

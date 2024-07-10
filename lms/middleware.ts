@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  const token = await localStorage.getItem("access_token");
+  // Extract the token from cookies
+  const token = request.cookies.get("access_token");
   const url = request.nextUrl;
 
   // Redirect to dashboard if the user is already authenticated
@@ -13,18 +14,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
       url.pathname.startsWith("/verify") ||
       url.pathname === "/")
   ) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
   }
-
-  // Authorization for admin panel only
-  // if (
-  //   token &&
-  //   url.pathname.startsWith("/adminPanel") &&
-  //   token.role !== "admin"
-  // ) {
-  //   return NextResponse.redirect(new URL("/dashboard", request.url));
-  // }
-
   // Redirect to sign-in if the user is not authenticated
   if (
     !token &&

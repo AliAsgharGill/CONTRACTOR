@@ -1,4 +1,5 @@
 "use client";
+import Cookies from 'js-cookie';
 
 import { useEffect, useState } from "react";
 import {
@@ -36,6 +37,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
+import { request } from "http";
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
@@ -50,21 +52,17 @@ export default function Nav() {
   const route = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem("access_token");
+    const token = Cookies.get('access_token');
     setIsLoggedIn(!!token);
-  }, []);
+  }, []); 
 
   const handleLogout = () => {
-    localStorage.removeItem("access_token");
+    Cookies.remove("access_token");
     setIsLoggedIn(false);
     route.refresh();
     route.push("/sign-in");
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("access_token");
-    setIsLoggedIn(!!token);
-  }, [isLoggedIn]);
 
   const onSubmit = async (data: z.infer<typeof searchSchema>) => {
     console.log("Form submitted:", data);
@@ -77,7 +75,8 @@ export default function Nav() {
       }
 
       const response = await axios.get(
-        `https://1a7c-193-56-116-12.ngrok-free.app/books/search-books?query=${data.search}`,
+        // `https://1a7c-193-56-116-12.ngrok-free.app/books/search-books?query=${data.search}`,
+        `http://192.168.0.247:8000/book?search=${data.search}`,
         {
           headers: {
             "ngrok-skip-browser-warning": "69420",
@@ -109,7 +108,7 @@ export default function Nav() {
   const { register, handleSubmit } = form;
 
   return (
-    <header className="">
+    <header className="z-50">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -294,7 +293,6 @@ export default function Nav() {
 
       {/* Search Results Section */}
       <div className="container mx-auto p-6">
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {searchResults ? (
             searchResults.map((book: searchResponse) => (
