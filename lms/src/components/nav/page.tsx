@@ -60,8 +60,15 @@ export default function Nav() {
     console.log("Form submitted:", data);
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
+        `https://1a7c-193-56-116-12.ngrok-free.app/books/search-books?query=${data.search}`,
+        {
+          headers: {
+            "ngrok-skip-browser-warning": "69420",
+          },
+        }
       );
+      console.log("Search response:", response);
+      
       const filteredResults = response.data.filter((user: any) =>
         user.name.toLowerCase().includes(data.search.toLowerCase())
       );
@@ -70,11 +77,11 @@ export default function Nav() {
     } catch (error) {
       const errorMessage =
         // error.response?.data?.message || "Failed to get book";
-      toast({
-        title: "Error",
-        description: "Failed to get book",
-        variant: "destructive",
-      });
+        toast({
+          title: "Error",
+          description: "Failed to get book",
+          variant: "destructive",
+        });
     }
   };
 
