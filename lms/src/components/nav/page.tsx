@@ -25,8 +25,17 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "../ui/use-toast";
 import { z } from "zod";
-import { SearchValues } from "@/types/searchType";
+import { searchResponse, SearchValues } from "@/types/searchType";
 import { searchSchema } from "@/app/schemas/serach-schema";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Loader2 } from "lucide-react";
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
@@ -37,6 +46,7 @@ export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const route = useRouter();
 
   useEffect(() => {
@@ -58,6 +68,7 @@ export default function Nav() {
 
   const onSubmit = async (data: z.infer<typeof searchSchema>) => {
     console.log("Form submitted:", data);
+    setIsSubmitting(true);
     try {
       const response = await axios.get(
         `https://1a7c-193-56-116-12.ngrok-free.app/books/search-books?query=${data.search}`,
@@ -68,12 +79,7 @@ export default function Nav() {
         }
       );
       console.log("Search response:", response);
-      
-      const filteredResults = response.data.filter((user: any) =>
-        user.name.toLowerCase().includes(data.search.toLowerCase())
-      );
-      console.log("Search successful Data:", filteredResults);
-      setSearchResults(filteredResults);
+      setSearchResults(response.data);
     } catch (error) {
       const errorMessage =
         // error.response?.data?.message || "Failed to get book";
@@ -82,6 +88,8 @@ export default function Nav() {
           description: "Failed to get book",
           variant: "destructive",
         });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -150,8 +158,16 @@ export default function Nav() {
             <Button
               type="submit"
               className="text-sm font-semibold leading-6 text-white"
+              disabled={isSubmitting}
             >
-              Search
+              {isSubmitting ? (
+                <div className="flex justify-center items-center">
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  searching
+                </div>
+              ) : (
+                "Search"
+              )}
             </Button>
           </form>
         </PopoverGroup>
@@ -273,24 +289,42 @@ export default function Nav() {
       <div className="container mx-auto p-6">
         <h2 className="text-xl font-semibold mb-4">Search Results</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {searchResults
-            ? searchResults.map((result: any) => (
-                <div
-                  key={result.id}
-                  className="bg-white p-4 rounded-lg shadow-md"
-                >
-                  <h3 className="text-lg font-semibold">{result.name}</h3>
-                  <p>{result.email}</p>
-                  <p>{result.phone}</p>
-                  <Link
-                    href={`/books/${result.id}`}
-                    className="text-blue-500 hover:underline"
-                  >
-                    View Details
-                  </Link>
+          {searchResults ? (
+            searchResults.map((book: searchResponse) => (
+              <div
+                key={book.id}
+                className="bg-white overflow-hidden shadow-md rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-xl"
+              >
+                <div className="px-4 py-3">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {book.name}
+                  </h3>
+                  <p className="text-sm text-gray-600">{book.author}</p>
                 </div>
-              ))
-            : "No results found."}
+                <div className="px-4 py-2">
+                  <p className="text-sm text-gray-700">Genre: {book.genre}</p>
+                </div>
+                <div className="px-4 py-2">
+                  <p>
+                    {book.available ? (
+                      <span className="text-green-500">Available</span>
+                    ) : (
+                      <span className="text-red-500">Not Available</span>
+                    )}
+                  </p>
+                </div>
+                <div className="px-4 py-2">
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-lg focus:outline-none">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-gray-600 text-center py-4 col-span-3">
+              No book found.
+            </p>
+          )}
         </div>
       </div>
     </header>

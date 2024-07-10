@@ -3,3 +3,10 @@ export type SearchValues = {
   setSearch: (search: string) => void;
 };
                   
+export type searchResponse = {
+  id: number;
+  name: string;
+  genre: string;
+  author: string;
+  available: boolean;
+};
