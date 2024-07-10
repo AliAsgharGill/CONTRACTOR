@@ -69,10 +69,10 @@ export default function Nav() {
       setSearchResults(filteredResults);
     } catch (error) {
       const errorMessage =
-        error.response?.data?.message || "Failed to get book";
+        // error.response?.data?.message || "Failed to get book";
       toast({
         title: "Error",
-        description: errorMessage,
+        description: "Failed to get book",
         variant: "destructive",
       });
     }
@@ -266,19 +266,24 @@ export default function Nav() {
       <div className="container mx-auto p-6">
         <h2 className="text-xl font-semibold mb-4">Search Results</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {searchResults.map((result: any) => (
-            <div key={result.id} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-lg font-semibold">{result.name}</h3>
-              <p>{result.email}</p>
-              <p>{result.phone}</p>
-              <Link
-                href={`/books/${result.id}`}
-                className="text-blue-500 hover:underline"
-              >
-                View Details
-              </Link>
-            </div>
-          ))}
+          {searchResults
+            ? searchResults.map((result: any) => (
+                <div
+                  key={result.id}
+                  className="bg-white p-4 rounded-lg shadow-md"
+                >
+                  <h3 className="text-lg font-semibold">{result.name}</h3>
+                  <p>{result.email}</p>
+                  <p>{result.phone}</p>
+                  <Link
+                    href={`/books/${result.id}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              ))
+            : "No results found."}
         </div>
       </div>
     </header>
