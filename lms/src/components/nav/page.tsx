@@ -70,6 +70,12 @@ export default function Nav() {
     console.log("Form submitted:", data);
     setIsSubmitting(true);
     try {
+      if (!data.search.trim()) {
+        // If search query is empty, clear searchResults
+        setSearchResults([]);
+        return; // Exit early if there's no search query
+      }
+
       const response = await axios.get(
         `https://1a7c-193-56-116-12.ngrok-free.app/books/search-books?query=${data.search}`,
         {
@@ -103,7 +109,7 @@ export default function Nav() {
   const { register, handleSubmit } = form;
 
   return (
-    <header className="bg-white">
+    <header className="">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -114,7 +120,8 @@ export default function Nav() {
             <Image
               height={42}
               width={200}
-              alt=""
+              priority
+              alt="logo"
               src="https://i.pinimg.com/736x/a7/91/0c/a7910cf32f182c9ea34022abb7839980.jpg"
               className="h-8 w-auto"
             />
@@ -293,15 +300,13 @@ export default function Nav() {
             searchResults.map((book: searchResponse) => (
               <div
                 key={book.id}
-                className="bg-white overflow-hidden shadow-md rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-xl"
+                className="bg-slate-100 overflow-hidden shadow-md rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-xl"
               >
                 <div className="px-4 py-3">
                   <h3 className="text-lg font-semibold text-gray-900">
                     {book.name}
                   </h3>
-                  <p className="text-sm text-gray-600">{book.author}</p>
-                </div>
-                <div className="px-4 py-2">
+                  <p className="text-sm text-gray-600">Author: {book.author}</p>
                   <p className="text-sm text-gray-700">Genre: {book.genre}</p>
                 </div>
                 <div className="px-4 py-2">
@@ -312,11 +317,6 @@ export default function Nav() {
                       <span className="text-red-500">Not Available</span>
                     )}
                   </p>
-                </div>
-                <div className="px-4 py-2">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-lg focus:outline-none">
-                    View Details
-                  </button>
                 </div>
               </div>
             ))

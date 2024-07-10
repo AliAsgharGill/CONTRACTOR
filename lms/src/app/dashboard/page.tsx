@@ -69,7 +69,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center bg-gray-100 ">
         <Dialog>
           <DialogTrigger asChild>
             <Button variant="outline">Add Book</Button>

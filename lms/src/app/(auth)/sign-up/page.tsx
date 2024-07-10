@@ -69,7 +69,7 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center min-h-screen ">
         <form
           noValidate
           //   to submit the form we use handleSubmit method assigned to the onSubmit event and passed in our submit function
