@@ -118,7 +118,7 @@ export default function Nav() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">LMS</span>
             <Image
-              height={42}
+              height={100}
               width={200}
               priority
               alt="logo"
@@ -294,7 +294,7 @@ export default function Nav() {
 
       {/* Search Results Section */}
       <div className="container mx-auto p-6">
-        <h2 className="text-xl font-semibold mb-4">Search Results</h2>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {searchResults ? (
             searchResults.map((book: searchResponse) => (
